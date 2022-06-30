@@ -14,7 +14,9 @@ class PlatinumController extends Controller
      */
     public function index()
     {
-        //
+        return view("platinum.index", [
+            "title" => "Platinum"
+        ]);
     }
 
     /**

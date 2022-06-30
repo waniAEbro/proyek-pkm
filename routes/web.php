@@ -2,8 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\KelasController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MentorController;
+use App\Http\Controllers\PlatinumController;
+use App\Http\Controllers\PertanyaanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +27,10 @@ Route::post("/login", [LoginController::class, "authenticate"]);
 
 Route::get("/logout", [LoginController::class, "logout"])->middleware("auth");
 
-Route::get("/admin", [AdminController::class, "index"])->middleware("auth");
+Route::resource("kelas", KelasController::class)->middleware("auth");
+
+Route::resource("platinum", PlatinumController::class)->middleware("auth");
+
+Route::resource("pertanyaan", PertanyaanController::class)->middleware("auth");
+
+Route::resource("mentor", MentorController::class)->middleware("auth");

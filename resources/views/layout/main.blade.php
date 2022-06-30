@@ -66,12 +66,9 @@
         }
     }
 
-    @media screen and(max-width: 991px) {
+    @media screen and (max-width: 991px) {
         .hilang {
             display : none!important;
-        }
-        .sidebar-collapse .navbar-collapse:before {
-            background : white!important;
         }
     }
     
@@ -117,7 +114,7 @@
         </li>
         @auth
         <li class="nav-item">
-            <a class="nav-link" href="/admin">
+            <a class="nav-link" href="/kelas">
                 <p>Admin</p>
             </a>
         </li>

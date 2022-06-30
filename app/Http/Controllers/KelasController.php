@@ -14,7 +14,9 @@ class KelasController extends Controller
      */
     public function index()
     {
-        //
+        return view("kelas.index", [
+            "title" => "Kelas"
+        ]);
     }
 
     /**
@@ -24,7 +26,9 @@ class KelasController extends Controller
      */
     public function create()
     {
-        //
+        return view("kelas.create", [
+            "title" => "Kelas"
+        ]);
     }
 
     /**

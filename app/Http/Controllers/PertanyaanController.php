@@ -14,7 +14,9 @@ class PertanyaanController extends Controller
      */
     public function index()
     {
-        //
+        return view("pertanyaan.index", [
+            "title" => "Pertanyaan"
+        ]);
     }
 
     /**
