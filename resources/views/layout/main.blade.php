@@ -78,7 +78,7 @@
         <div class="page-header-image navbar-brand">
             <img src="https://drive.google.com/uc?export=view&id=1tOpOiuy-Y06a3W37FZ0Zj1DUDTmigCqR" alt="" style="height: 6vh" >
         </div>
-        <<!-- Menambah logo -->
+        <<!-- Menambah logo -->>
         
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-bar top-bar"></span>
