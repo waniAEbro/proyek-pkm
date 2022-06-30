@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     public function login () {
-        return view("login-page", [
+        return view("homepage.login-page", [
             "title" => "Login"
         ]);
     }

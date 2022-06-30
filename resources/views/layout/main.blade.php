@@ -56,29 +56,40 @@
         background-image: linear-gradient(to bottom, rgba(5,5,5,0), rgba(5,5,5,1));
     }
 
-    @media(max-width: 1200px) {
+    .filter-to-dark:after {
+        background-image: linear-gradient(to bottom, rgba(5,5,5,1), rgba(5,5,5,0));
+    }
+
+    @media screen and (max-width: 1200px) {
         .hilang {
             bottom:23vh!important;
         }
     }
 
-    @media(max-width: 992px) {
+    @media screen and(max-width: 991px) {
         .hilang {
             display : none!important;
         }
+        .sidebar-collapse .navbar-collapse:before {
+            background : white!important;
+        }
     }
+    
 </style>
 </head>
 
 <body class="index-page sidebar-collapse">
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="50">
+<nav class="navbar navbar-expand-lg bg-light fixed-top navbar-transparent " @if($title != "Login")color-on-scroll="50"@endif>
     <div class="container">
     <div class="navbar-translate">
         <div class="page-header-image navbar-brand">
-            <img src="https://drive.google.com/uc?export=view&id=1tOpOiuy-Y06a3W37FZ0Zj1DUDTmigCqR" alt="" style="height: 6vh" >
+            <a class="navbar-brand" href="/">
+                <img src="https://drive.google.com/uc?export=view&id=1tOpOiuy-Y06a3W37FZ0Zj1DUDTmigCqR" alt="" style="height: 30px" >
+            </a>
+            
         </div>
-        <<!-- Menambah logo -->>
+        <!-- Menambah logo -->
         
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-bar top-bar"></span>
@@ -88,7 +99,7 @@
     </div>
     <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="/img/blurred-image-1.jpg">
         <ul class="navbar-nav">
-        <li class="nav-item">
+        <li class="nav-item text-black">
             <a class="nav-link" href="/">
                 <p>Home</p>
             </a>
@@ -104,8 +115,15 @@
             </a>
 
         </li>
+        @auth
         <li class="nav-item">
-            <form>
+            <a class="nav-link" href="/admin">
+                <p>Admin</p>
+            </a>
+        </li>
+        @endauth
+        <li class="nav-item">
+            <form class="form-inline" style="margin: 0 1rem;">
                 <div class="input-group">
                     <input type="text" class="form-control bg-light" placeholder="Search ...">
                     <div class="input-group-append">
@@ -114,16 +132,9 @@
                 </div>
             </form>
         </li>
-        @auth
-        <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)">
-                <p>Admin</p>
-            </a>
-        </li>
-        @endauth
         <li class="nav-item">
             @guest
-            <a class="nav-link btn btn-neutral btn-round" href="login">
+            <a class="nav-link btn btn-neutral btn-round" @if($title == "Login") style="display: none" @endif href="login">
             Login
             </a>
             @endguest

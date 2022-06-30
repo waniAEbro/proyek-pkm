@@ -205,7 +205,7 @@
 </main>
 
 
-<main class="mt-5 text-white p-5" style="background-image: url('https://drive.google.com/uc?export=view&id=1knuU2Rr45Z76vjAM31WN7wxs2UpV4VZk'); height: 350px; background-position: center">
+<main class="mt-5 text-white p-5" style="background-image: url('https://drive.google.com/uc?export=view&id=1knuU2Rr45Z76vjAM31WN7wxs2UpV4VZk'); height: 500px; background-position: center">
 <!-- Ubah benner bawah-->
 
 
