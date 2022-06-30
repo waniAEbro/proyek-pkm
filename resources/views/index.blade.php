@@ -3,28 +3,35 @@
 @section("main")
 
 <div class="wrapper">
-  <div class="page-header clear-filter home-header" filter-color="orange" style="overflow: unset">
-    <div class="page-header-image" data-parallax="true" style="background-image: url('https://drive.google.com/uc?export=view&id=1j4OQpis-dpF5efjQ9qaQfsclTIpTC4Wr'); filter : brightness(50%);"></div>
+  <div class="page-header clear-filter home-header" style="overflow: unset">
+    <div class="page-header-image" data-parallax="true" style="background-image: url('https://drive.google.com/uc?export=view&id=1RoLc6VuXj7AepMTCtjY1UGqTRd0FwL7S'); filter : brightness(100%);"></div>
+<!-- Menghilangkan filter color, merubah benner-->
+
+
     <div class="container d-flex align-items-center">
       <div class="row align-items-center">
         <div class="col" style="text-align: start!important;">
+          <h3>Rumah Kompetisi</h3> 
           <p>Belajar Riset dan Menulis Karya Ilmiah dengan Mudah serta Menyenangkan Membangun Ekosistem Keilmiahan dan Penelitian Untuk Mencetak Inovator Muda Indonesia</p>
         </div>
-        <div class="position-relative col-4 hilang" style="left: 8vh; top: 13vh;">
-          <img style="width: 20vw; border-radius: 20px;" class="img-raised" src="https://drive.google.com/uc?export=view&id=1l1qCGKEVl6QyrueHDiIxzP54gpKxPmWQ" alt="">
+            <!--menambah tulisan-->
+
+        <div class="position-relative col-4 hilang" style="left: 2vh; top: 15vh;">
+          <img style="max-width: 35vw;" class="img" src="https://drive.google.com/uc?export=view&id=1czQc83UhJ1LxJIbR2H_ewCDA5Vpi-x-T" alt="">
         </div>
       </div>
     </div>
   </div>
 </div>
+
 <main class="container mt-5">
-  <h1 style="margin-top: 135px!important; margin-bottom: 60px;!important" class="text-center">
+  <h1 style="margin-top: 135px!important; margin-bottom: 60px;!important" class="text-center"; >
     <strong>Rumah Kompetisi Class</strong>
   </h1>
   <div class="row row-cols-md-3 g-4 justify-content-center">
     <div class="col-md-4 d-flex justify-content-center">
       <div class="card overflow-hidden" style="max-width: 20rem; border-radius: 20px; box-shadow: black">
-        <img class="card-img-top img-raised" src="https://drive.google.com/uc?export=view&id=1j4OQpis-dpF5efjQ9qaQfsclTIpTC4Wr" alt="Card image cap" style="border-radius: 20px; filter: brightness(40%)">
+        <img class="card-img-top img-raised" src="https://drive.google.com/uc?export=view&id=1_Qm6Rr_4dIipg8zsfKemqoIn6SH52Q_u" alt="Card image cap" style="border-radius: 20px; filter: brightness(70%)">
         <div class="text-white card-img-overlay d-flex overflow-hidden d-flex align-items-center" style="max-height: 48%">
           <div style="min-width: 60%">
             <i class="fa-solid fa-tags d-inline"></i>
@@ -49,9 +56,11 @@
         </div>
       </div>
     </div>
+
+
     <div class="col-md-4 d-flex justify-content-center">
       <div class="card overflow-hidden" style="max-width: 20rem; border-radius: 20px; box-shadow: black">
-        <img class="card-img-top img-raised" src="https://drive.google.com/uc?export=view&id=1j4OQpis-dpF5efjQ9qaQfsclTIpTC4Wr" alt="Card image cap" style="border-radius: 20px; filter: brightness(40%)">
+        <img class="card-img-top img-raised" src="https://drive.google.com/uc?export=view&id=1_Qm6Rr_4dIipg8zsfKemqoIn6SH52Q_u" alt="Card image cap" style="border-radius: 20px; filter: brightness(70%)">
         <div class="text-white card-img-overlay d-flex overflow-hidden d-flex align-items-center" style="max-height: 48%">
           <div style="min-width: 60%">
             <i class="fa-solid fa-tags d-inline"></i>
@@ -76,9 +85,98 @@
         </div>
       </div>
     </div>
+
+
     <div class="col-md-4 d-flex justify-content-center">
       <div class="card overflow-hidden" style="max-width: 20rem; border-radius: 20px; box-shadow: black">
-        <img class="card-img-top img-raised" src="https://drive.google.com/uc?export=view&id=1j4OQpis-dpF5efjQ9qaQfsclTIpTC4Wr" alt="Card image cap" style="border-radius: 20px; filter: brightness(40%)">
+        <img class="card-img-top img-raised" src="https://drive.google.com/uc?export=view&id=1_Qm6Rr_4dIipg8zsfKemqoIn6SH52Q_u" alt="Card image cap" style="border-radius: 20px; filter: brightness(70%)">
+        <div class="text-white card-img-overlay d-flex overflow-hidden d-flex align-items-center" style="max-height: 48%">
+          <div style="min-width: 60%">
+            <i class="fa-solid fa-tags d-inline"></i>
+            <p class="d-inline">Diskon 80 %</p>
+            <h3 class="m-0">Essay Class</h3>
+            <h5>1 Bulan</h5>
+            <h4><s>Rp 150.000 ,-</s></h4>
+          </div>
+          <div>
+            <img style = "border-radius: 1rem;" src="https://agricia.faperta.ugm.ac.id/wp-content/uploads/sites/377/2018/06/logo-ugm-png.png" alt="">
+          </div>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title text-center"><strong>Rp. 50.000 ,-</strong></h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        <div class="card-footer bg-transparent pl-3 pr-3">
+          <div class="d-flex justify-content-between align-items-center">
+            <a href="#">more</a>
+            <a href="https://wa.me/085900221521" class="btn btn-primary">Beli</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="row row-cols-md-3 g-4 justify-content-center">
+    <div class="col-md-4 d-flex justify-content-center">
+      <div class="card overflow-hidden" style="max-width: 20rem; border-radius: 20px; box-shadow: black">
+        <img class="card-img-top img-raised" src="https://drive.google.com/uc?export=view&id=1_Qm6Rr_4dIipg8zsfKemqoIn6SH52Q_u" alt="Card image cap" style="border-radius: 20px; filter: brightness(70%)">
+        <div class="text-white card-img-overlay d-flex overflow-hidden d-flex align-items-center" style="max-height: 48%">
+          <div style="min-width: 60%">
+            <i class="fa-solid fa-tags d-inline"></i>
+            <p class="d-inline">Diskon 80 %</p>
+            <h3 class="m-0">Essay Class</h3>
+            <h5>1 Bulan</h5>
+            <h4><s>Rp 150.000 ,-</s></h4>
+          </div>
+          <div>
+            <img style = "border-radius: 1rem;" src="https://lppm.unnes.ac.id/storage/2015/08/Logo-Transparan-Warna-1.png" alt="">
+          </div>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title text-center"><strong>Rp. 50.000 ,-</strong></h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        <div class="card-footer bg-transparent pl-3 pr-3">
+          <div class="d-flex justify-content-between align-items-center">
+            <a href="#">more</a>
+            <a href="https://wa.me/085900221521" class="btn btn-primary">Beli</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-4 d-flex justify-content-center">
+      <div class="card overflow-hidden" style="max-width: 20rem; border-radius: 20px; box-shadow: black">
+        <img class="card-img-top img-raised" src="https://drive.google.com/uc?export=view&id=1_Qm6Rr_4dIipg8zsfKemqoIn6SH52Q_u" alt="Card image cap" style="border-radius: 20px; filter: brightness(70%)">
+        <div class="text-white card-img-overlay d-flex overflow-hidden d-flex align-items-center" style="max-height: 48%">
+          <div style="min-width: 60%">
+            <i class="fa-solid fa-tags d-inline"></i>
+            <p class="d-inline">Diskon 80 %</p>
+            <h3 class="m-0">Essay Class</h3>
+            <h5>1 Bulan</h5>
+            <h4><s>Rp 150.000 ,-</s></h4>
+          </div>
+          <div>
+            <img style = "border-radius: 1rem;" src="https://agricia.faperta.ugm.ac.id/wp-content/uploads/sites/377/2018/06/logo-ugm-png.png" alt="">
+          </div>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title text-center"><strong>Rp. 50.000 ,-</strong></h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        <div class="card-footer bg-transparent pl-3 pr-3">
+          <div class="d-flex justify-content-between align-items-center">
+            <a href="#">more</a>
+            <a href="https://wa.me/085900221521" class="btn btn-primary">Beli</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-4 d-flex justify-content-center">
+      <div class="card overflow-hidden" style="max-width: 20rem; border-radius: 20px; box-shadow: black">
+        <img class="card-img-top img-raised" src="https://drive.google.com/uc?export=view&id=1_Qm6Rr_4dIipg8zsfKemqoIn6SH52Q_u" alt="Card image cap" style="border-radius: 20px; filter: brightness(70%)">
         <div class="text-white card-img-overlay d-flex overflow-hidden d-flex align-items-center" style="max-height: 48%">
           <div style="min-width: 60%">
             <i class="fa-solid fa-tags d-inline"></i>
@@ -105,7 +203,12 @@
     </div>
   </div>
 </main>
-<main class="mt-5 text-white p-5" style="background-image: url('/img/header.jpg'); height: 500px; background-position: center">
+
+
+<main class="mt-5 text-white p-5" style="background-image: url('https://drive.google.com/uc?export=view&id=1knuU2Rr45Z76vjAM31WN7wxs2UpV4VZk'); height: 350px; background-position: center">
+<!-- Ubah benner bawah-->
+
+
   <div class="container d-flex align-items-center" style="height: 100%">
     <div class="row align-items-center">
       <div class="col">
@@ -125,7 +228,7 @@
               <div class="row row-cols-md-3 g-4 justify-content-center">
                 <div class="col-md-4 d-flex justify-content-center">
                   <div class="card overflow-hidden" style="max-width: 20rem; border-radius: 20px; box-shadow: black">
-                    <img class="card-img-top img-raised" src="https://drive.google.com/uc?export=view&id=1j4OQpis-dpF5efjQ9qaQfsclTIpTC4Wr" alt="Card image cap" style="border-radius: 20px; filter: brightness(40%)">
+                    <img class="card-img-top img-raised" src="https://drive.google.com/uc?export=view&id=1_Qm6Rr_4dIipg8zsfKemqoIn6SH52Q_u" alt="Card image cap" style="border-radius: 20px; filter: brightness(40%)">
                     <div class="text-white card-img-overlay d-flex overflow-hidden d-flex align-items-center" style="max-height: 48%">
                       <div style="min-width: 60%">
                         <i class="fa-solid fa-tags d-inline"></i>
