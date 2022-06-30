@@ -3,7 +3,7 @@
 @section("main")
 
 <div class="wrapper">
-  <div class="page-header clear-filter home-header" filter-color="orange" style="overflow: unset">
+  <div class="page-header filter filter-to-dark home-header" style="overflow: unset">
     <div class="page-header-image" data-parallax="true" style="background-image: url('https://drive.google.com/uc?export=view&id=1j4OQpis-dpF5efjQ9qaQfsclTIpTC4Wr'); filter : brightness(50%);"></div>
     <div class="container d-flex align-items-center">
       <div class="row align-items-center">

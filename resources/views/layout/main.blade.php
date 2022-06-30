@@ -56,6 +56,10 @@
         background-image: linear-gradient(to bottom, rgba(5,5,5,0), rgba(5,5,5,1));
     }
 
+    .filter-to-dark:after {
+        background-image: linear-gradient(to bottom, rgba(5,5,5,1), rgba(5,5,5,0));
+    }
+
     @media(max-width: 1200px) {
         .hilang {
             bottom:23vh!important;
@@ -72,11 +76,11 @@
 
 <body class="index-page sidebar-collapse">
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="50">
+<nav class="navbar navbar-expand-lg bg-dark fixed-top navbar-transparent" @if ($title != "Login") color-on-scroll="50" @endif>
     <div class="container">
     <div class="navbar-translate">
         <a class="navbar-brand" href="/" rel="tooltip" title="Belajar Riset dan Menulis Karya Ilmiah dengan Mudah serta Menyenangkan" data-placement="bottom">
-        Rumah Kompetisi
+            <img height="30px" src="https://drive.google.com/uc?export=view&id=1tOpOiuy-Y06a3W37FZ0Zj1DUDTmigCqR" alt="">
         </a>
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-bar top-bar"></span>
@@ -116,7 +120,12 @@
             </div>
         </li>
         <li class="nav-item">
-            <form>
+            <a class="nav-link" href="/admin">
+                <p>Admin</p>
+            </a>
+        </li>
+        <li class="nav-item d-flex justify-content-center">
+            <form class="form-inline">
                 <div class="input-group">
                     <input type="text" class="form-control bg-light" placeholder="Search ...">
                     <div class="input-group-append">
@@ -126,15 +135,10 @@
             </form>
         </li>
         @auth
-        <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)">
-                <p>Admin</p>
-            </a>
-        </li>
         @endauth
         <li class="nav-item">
             @guest
-            <a class="nav-link btn btn-neutral btn-round" href="login">
+            <a class="nav-link btn btn-neutral btn-round" @if ($title == "Login") style="display:none;"  @endif href="login">
             Login
             </a>
             @endguest
