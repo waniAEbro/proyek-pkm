@@ -138,7 +138,7 @@
 @yield("main")
 
 <footer class="footer" data-background-color="black">
-    <div class=" container">
+    <div class=" container d-flex justify-content-between align-items-center">
         <nav>
             <ul>
             <li>
