@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Kelas;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class KelasController extends Controller
 {
@@ -15,7 +16,8 @@ class KelasController extends Controller
     public function index()
     {
         return view("kelas.index", [
-            "title" => "Kelas"
+            "title" => "Kelas",
+            "kelas" => Kelas::paginate(10)
         ]);
     }
 
@@ -39,7 +41,8 @@ class KelasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Kelas::create($request->all());
+        return redirect("/kelas");
     }
 
     /**
@@ -48,7 +51,7 @@ class KelasController extends Controller
      * @param  \App\Models\Kelas  $kelas
      * @return \Illuminate\Http\Response
      */
-    public function show(Kelas $kelas)
+    public function show($id)
     {
         //
     }
@@ -59,9 +62,12 @@ class KelasController extends Controller
      * @param  \App\Models\Kelas  $kelas
      * @return \Illuminate\Http\Response
      */
-    public function edit(Kelas $kelas)
+    public function edit($id)
     {
-        //
+        return view("kelas.edit", [
+            "kelas" => Kelas::where("id", $id)->first(),
+            "title" => "Kelas"
+        ]);
     }
 
     /**
@@ -71,9 +77,19 @@ class KelasController extends Controller
      * @param  \App\Models\Kelas  $kelas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Kelas $kelas)
+    public function update(Request $request, $id)
     {
-        //
+        Kelas::where("id", $id)->update([
+            "nama" => $request->nama,
+            "diskon" => $request->diskon,
+            "harga_lama" => $request->harga_lama,
+            "harga_baru" => $request->harga_baru,
+            "deskripsi_singkat" => $request->deskripsi_singkat,
+            "instansi" => $request->instansi,
+            "background" => $request->background,
+            "masa" => $request->masa
+        ]);
+        return redirect("/kelas");
     }
 
     /**
@@ -82,8 +98,9 @@ class KelasController extends Controller
      * @param  \App\Models\Kelas  $kelas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kelas $kelas)
+    public function destroy($id)
     {
-        //
+        Kelas::destroy($id);
+        return redirect("/kelas");
     }
 }

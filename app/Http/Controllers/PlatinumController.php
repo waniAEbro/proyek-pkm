@@ -15,7 +15,8 @@ class PlatinumController extends Controller
     public function index()
     {
         return view("platinum.index", [
-            "title" => "Platinum"
+            "title" => "Platinum",
+            "platinum" => Platinum::paginate(10)
         ]);
     }
 
@@ -26,7 +27,9 @@ class PlatinumController extends Controller
      */
     public function create()
     {
-        //
+        return view("platinum.create", [
+            "title" => "Platinum"
+        ]);
     }
 
     /**
@@ -37,7 +40,8 @@ class PlatinumController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Platinum::create($request->all());
+        return redirect("/platinum");
     }
 
     /**
@@ -46,7 +50,7 @@ class PlatinumController extends Controller
      * @param  \App\Models\Platinum  $platinum
      * @return \Illuminate\Http\Response
      */
-    public function show(Platinum $platinum)
+    public function show($id)
     {
         //
     }
@@ -57,9 +61,12 @@ class PlatinumController extends Controller
      * @param  \App\Models\Platinum  $platinum
      * @return \Illuminate\Http\Response
      */
-    public function edit(Platinum $platinum)
+    public function edit($id)
     {
-        //
+        return view("platinum.edit", [
+            "platinum" => Platinum::where("id", $id)->first(),
+            "title" => "Platinum"
+        ]);
     }
 
     /**
@@ -69,9 +76,19 @@ class PlatinumController extends Controller
      * @param  \App\Models\Platinum  $platinum
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Platinum $platinum)
+    public function update(Request $request, $id)
     {
-        //
+        Platinum::where("id", $id)->update([
+            "nama" => $request->nama,
+            "diskon" => $request->diskon,
+            "harga_lama" => $request->harga_lama,
+            "harga_baru" => $request->harga_baru,
+            "deskripsi_singkat" => $request->deskripsi_singkat,
+            "instansi" => $request->instansi,
+            "background" => $request->background,
+            "masa" => $request->masa
+        ]);
+        return redirect("/platinum");
     }
 
     /**
@@ -80,7 +97,7 @@ class PlatinumController extends Controller
      * @param  \App\Models\Platinum  $platinum
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Platinum $platinum)
+    public function destroy($id)
     {
         //
     }

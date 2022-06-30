@@ -29,178 +29,64 @@
     <strong>Rumah Kompetisi Class</strong>
   </h1>
   <div class="row row-cols-md-3 g-4 justify-content-center">
+    @foreach($kelas as $item)
     <div class="col-md-4 d-flex justify-content-center">
       <div class="card overflow-hidden" style="max-width: 20rem; border-radius: 20px; box-shadow: black">
-        <img class="card-img-top img-raised" src="https://drive.google.com/uc?export=view&id=1_Qm6Rr_4dIipg8zsfKemqoIn6SH52Q_u" alt="Card image cap" style="border-radius: 20px; filter: brightness(70%)">
-        <div class="text-white card-img-overlay d-flex overflow-hidden d-flex align-items-center" style="max-height: 48%">
-          <div style="min-width: 60%">
+        <img class="card-img-top img-raised" src="@if($item->background == null) https://drive.google.com/uc?export=view&id=1_Qm6Rr_4dIipg8zsfKemqoIn6SH52Q_u @else {{$item->background}} @endif" alt="Card image cap" style="border-radius: 20px; filter: brightness(70%)">
+        <div class="text-white card-img-overlay overflow-hidden row align-items-center" style="height: 48%">
+          <div class="col-8">
+            @if ($item->diskon != null)
             <i class="fa-solid fa-tags d-inline"></i>
-            <p class="d-inline">Diskon 80 %</p>
-            <h3 class="m-0">Essay Class</h3>
-            <h5>1 Bulan</h5>
-            <h4><s>Rp 150.000 ,-</s></h4>
+            <p class="d-inline">Diskon {{$item->diskon}} %</p>
+            @endif
+            <h3 class="m-0"><strong>{{$item->nama}}</strong></h3>
+            <p>{{$item->masa}} Bulan</p>
+            @if ($item->harga_lama != null)
+            <h4><s>Rp {{$item->harga_lama}} ,-</s></h4>
+            @endif
           </div>
-          <div>
-            <img style = "border-radius: 1rem;" src="https://lppm.unnes.ac.id/storage/2015/08/Logo-Transparan-Warna-1.png" alt="">
+          <div class="col-4">
+            <img src="@if($item->intansi == null) https://lppm.unnes.ac.id/storage/2015/08/Logo-Transparan-Warna-1.png @else {{$item->intansi}} @endif" alt="">
           </div>
         </div>
-        <div class="card-body">
-          <h5 class="card-title text-center"><strong>Rp. 50.000 ,-</strong></h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <div class="card-body text-truncate" style="max-height: 275px" >
+          <h5 class="card-title text-center"><strong>Rp. {{$item->harga_baru}} ,-</strong></h5>
+          <p class="card-text">{{$item->deskripsi_singkat}}</p>
         </div>
         <div class="card-footer bg-transparent pl-3 pr-3">
           <div class="d-flex justify-content-between align-items-center">
             <a href="#">more</a>
-            <a href="https://wa.me/085900221521" class="btn btn-primary">Beli</a>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#whatsapp{{$item->id}}">
+              Beli
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="whatsapp{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><strong>Perhatian</strong></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    Silakan Kirim Chat "produk {{$item->id}}" untuk mulai memesan
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a href="https://wa.me/085900221521" class="btn btn-primary">Beli</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-
-    <div class="col-md-4 d-flex justify-content-center">
-      <div class="card overflow-hidden" style="max-width: 20rem; border-radius: 20px; box-shadow: black">
-        <img class="card-img-top img-raised" src="https://drive.google.com/uc?export=view&id=1_Qm6Rr_4dIipg8zsfKemqoIn6SH52Q_u" alt="Card image cap" style="border-radius: 20px; filter: brightness(70%)">
-        <div class="text-white card-img-overlay d-flex overflow-hidden d-flex align-items-center" style="max-height: 48%">
-          <div style="min-width: 60%">
-            <i class="fa-solid fa-tags d-inline"></i>
-            <p class="d-inline">Diskon 80 %</p>
-            <h3 class="m-0">Essay Class</h3>
-            <h5>1 Bulan</h5>
-            <h4><s>Rp 150.000 ,-</s></h4>
-          </div>
-          <div>
-            <img style = "border-radius: 1rem;" src="https://agricia.faperta.ugm.ac.id/wp-content/uploads/sites/377/2018/06/logo-ugm-png.png" alt="">
-          </div>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title text-center"><strong>Rp. 50.000 ,-</strong></h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <div class="card-footer bg-transparent pl-3 pr-3">
-          <div class="d-flex justify-content-between align-items-center">
-            <a href="#">more</a>
-            <a href="https://wa.me/085900221521" class="btn btn-primary">Beli</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="col-md-4 d-flex justify-content-center">
-      <div class="card overflow-hidden" style="max-width: 20rem; border-radius: 20px; box-shadow: black">
-        <img class="card-img-top img-raised" src="https://drive.google.com/uc?export=view&id=1_Qm6Rr_4dIipg8zsfKemqoIn6SH52Q_u" alt="Card image cap" style="border-radius: 20px; filter: brightness(70%)">
-        <div class="text-white card-img-overlay d-flex overflow-hidden d-flex align-items-center" style="max-height: 48%">
-          <div style="min-width: 60%">
-            <i class="fa-solid fa-tags d-inline"></i>
-            <p class="d-inline">Diskon 80 %</p>
-            <h3 class="m-0">Essay Class</h3>
-            <h5>1 Bulan</h5>
-            <h4><s>Rp 150.000 ,-</s></h4>
-          </div>
-          <div>
-            <img style = "border-radius: 1rem;" src="https://agricia.faperta.ugm.ac.id/wp-content/uploads/sites/377/2018/06/logo-ugm-png.png" alt="">
-          </div>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title text-center"><strong>Rp. 50.000 ,-</strong></h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <div class="card-footer bg-transparent pl-3 pr-3">
-          <div class="d-flex justify-content-between align-items-center">
-            <a href="#">more</a>
-            <a href="https://wa.me/085900221521" class="btn btn-primary">Beli</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-    <div class="row row-cols-md-3 g-4 justify-content-center">
-    <div class="col-md-4 d-flex justify-content-center">
-      <div class="card overflow-hidden" style="max-width: 20rem; border-radius: 20px; box-shadow: black">
-        <img class="card-img-top img-raised" src="https://drive.google.com/uc?export=view&id=1_Qm6Rr_4dIipg8zsfKemqoIn6SH52Q_u" alt="Card image cap" style="border-radius: 20px; filter: brightness(70%)">
-        <div class="text-white card-img-overlay d-flex overflow-hidden d-flex align-items-center" style="max-height: 48%">
-          <div style="min-width: 60%">
-            <i class="fa-solid fa-tags d-inline"></i>
-            <p class="d-inline">Diskon 80 %</p>
-            <h3 class="m-0">Essay Class</h3>
-            <h5>1 Bulan</h5>
-            <h4><s>Rp 150.000 ,-</s></h4>
-          </div>
-          <div>
-            <img style = "border-radius: 1rem;" src="https://lppm.unnes.ac.id/storage/2015/08/Logo-Transparan-Warna-1.png" alt="">
-          </div>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title text-center"><strong>Rp. 50.000 ,-</strong></h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <div class="card-footer bg-transparent pl-3 pr-3">
-          <div class="d-flex justify-content-between align-items-center">
-            <a href="#">more</a>
-            <a href="https://wa.me/085900221521" class="btn btn-primary">Beli</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="col-md-4 d-flex justify-content-center">
-      <div class="card overflow-hidden" style="max-width: 20rem; border-radius: 20px; box-shadow: black">
-        <img class="card-img-top img-raised" src="https://drive.google.com/uc?export=view&id=1_Qm6Rr_4dIipg8zsfKemqoIn6SH52Q_u" alt="Card image cap" style="border-radius: 20px; filter: brightness(70%)">
-        <div class="text-white card-img-overlay d-flex overflow-hidden d-flex align-items-center" style="max-height: 48%">
-          <div style="min-width: 60%">
-            <i class="fa-solid fa-tags d-inline"></i>
-            <p class="d-inline">Diskon 80 %</p>
-            <h3 class="m-0">Essay Class</h3>
-            <h5>1 Bulan</h5>
-            <h4><s>Rp 150.000 ,-</s></h4>
-          </div>
-          <div>
-            <img style = "border-radius: 1rem;" src="https://agricia.faperta.ugm.ac.id/wp-content/uploads/sites/377/2018/06/logo-ugm-png.png" alt="">
-          </div>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title text-center"><strong>Rp. 50.000 ,-</strong></h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <div class="card-footer bg-transparent pl-3 pr-3">
-          <div class="d-flex justify-content-between align-items-center">
-            <a href="#">more</a>
-            <a href="https://wa.me/085900221521" class="btn btn-primary">Beli</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="col-md-4 d-flex justify-content-center">
-      <div class="card overflow-hidden" style="max-width: 20rem; border-radius: 20px; box-shadow: black">
-        <img class="card-img-top img-raised" src="https://drive.google.com/uc?export=view&id=1_Qm6Rr_4dIipg8zsfKemqoIn6SH52Q_u" alt="Card image cap" style="border-radius: 20px; filter: brightness(70%)">
-        <div class="text-white card-img-overlay d-flex overflow-hidden d-flex align-items-center" style="max-height: 48%">
-          <div style="min-width: 60%">
-            <i class="fa-solid fa-tags d-inline"></i>
-            <p class="d-inline">Diskon 80 %</p>
-            <h3 class="m-0">Essay Class</h3>
-            <h5>1 Bulan</h5>
-            <h4><s>Rp 150.000 ,-</s></h4>
-          </div>
-          <div>
-            <img style = "border-radius: 1rem;" src="https://agricia.faperta.ugm.ac.id/wp-content/uploads/sites/377/2018/06/logo-ugm-png.png" alt="">
-          </div>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title text-center"><strong>Rp. 50.000 ,-</strong></h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <div class="card-footer bg-transparent pl-3 pr-3">
-          <div class="d-flex justify-content-between align-items-center">
-            <a href="#">more</a>
-            <a href="https://wa.me/085900221521" class="btn btn-primary">Beli</a>
-          </div>
-        </div>
-      </div>
-    </div>
+    @endforeach
   </div>
 </main>
 
@@ -226,33 +112,64 @@
               </div>
               <h1 class="text-center"><strong>Promo Platinum</strong></h1>
               <div class="row row-cols-md-3 g-4 justify-content-center">
-                <div class="col-md-4 d-flex justify-content-center">
-                  <div class="card overflow-hidden" style="max-width: 20rem; border-radius: 20px; box-shadow: black">
-                    <img class="card-img-top img-raised" src="https://drive.google.com/uc?export=view&id=1_Qm6Rr_4dIipg8zsfKemqoIn6SH52Q_u" alt="Card image cap" style="border-radius: 20px; filter: brightness(40%)">
-                    <div class="text-white card-img-overlay d-flex overflow-hidden d-flex align-items-center" style="max-height: 48%">
-                      <div style="min-width: 60%">
-                        <i class="fa-solid fa-tags d-inline"></i>
-                        <p class="d-inline">Diskon 80 %</p>
-                        <h3 class="m-0">Essay Class</h3>
-                        <h5>1 Bulan</h5>
-                        <h4><s>Rp 150.000 ,-</s></h4>
+                @foreach($platinum as $item)
+                  <div class="col-md-4 d-flex justify-content-center">
+                    <div class="card overflow-hidden" style="max-width: 20rem; border-radius: 20px; box-shadow: black">
+                      <img class="card-img-top img-raised" src="@if($item->background == null) https://drive.google.com/uc?export=view&id=1_Qm6Rr_4dIipg8zsfKemqoIn6SH52Q_u @else {{$item->background}} @endif" alt="Card image cap" style="border-radius: 20px; filter: brightness(70%)">
+                      <div class="text-white card-img-overlay overflow-hidden row align-items-center" style="height: 48%">
+                        <div class="col-8">
+                          @if ($item->diskon != null)
+                          <i class="fa-solid fa-tags d-inline"></i>
+                          <p class="d-inline">Diskon {{$item->diskon}} %</p>
+                          @endif
+                          <h3 class="m-0"><strong>{{$item->nama}}</strong></h3>
+                          <p>{{$item->masa}} Bulan</p>
+                          @if ($item->harga_lama != null)
+                          <h4><s>Rp {{$item->harga_lama}} ,-</s></h4>
+                          @endif
+                        </div>
+                        <div class="col-4">
+                          <img src="@if($item->intansi == null) https://lppm.unnes.ac.id/storage/2015/08/Logo-Transparan-Warna-1.png @else {{$item->intansi}} @endif" alt="">
+                        </div>
                       </div>
-                      <div>
-                        <img style = "border-radius: 1rem;" src="https://lppm.unnes.ac.id/storage/2015/08/Logo-Transparan-Warna-1.png" alt="">
+                      <div class="card-body text-truncate" style="max-height: 275px" >
+                        <h5 class="card-title text-center"><strong>Rp. {{$item->harga_baru}} ,-</strong></h5>
+                        <p class="card-text">{{$item->deskripsi_singkat}}</p>
                       </div>
-                    </div>
-                    <div class="card-body">
-                      <h5 class="card-title text-center"><strong>Rp. 50.000 ,-</strong></h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                    <div class="card-footer bg-transparent pl-3 pr-3">
-                      <div class="d-flex justify-content-between align-items-center">
-                        <a href="#">more</a>
-                        <a href="https://wa.me/085900221521" class="btn btn-primary">Beli</a>
+                      <div class="card-footer bg-transparent pl-3 pr-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                          <a href="#">more</a>
+
+                          <!-- Button trigger modal -->
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#whatsapp{{$item->id}}">
+                            Beli
+                          </button>
+
+                          <!-- Modal -->
+                          <div class="modal fade" id="whatsapp{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel"><strong>Perhatian</strong></h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                  Silakan Kirim Chat "produk {{$item->id}}" untuk mulai memesan
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  <a href="https://wa.me/085900221521" class="btn btn-primary">Beli</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                  @endforeach
               </div>
             </div>
           </div>

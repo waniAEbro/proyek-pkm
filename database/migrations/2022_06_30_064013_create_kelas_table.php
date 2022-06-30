@@ -15,14 +15,14 @@ return new class extends Migration
     {
         Schema::create('kelas', function (Blueprint $table) {
             $table->id();
-            $table->string("diskon");
+            $table->string("diskon")->nullable();
             $table->string("nama");
             $table->integer("masa");
-            $table->string("harga_lama");
+            $table->string("harga_lama")->nullable();
             $table->string("harga_baru");
             $table->text("deskripsi_singkat");
-            $table->string("background");
-            $table->string("instansi");
+            $table->string("background")->nullable();
+            $table->string("instansi")->nullable();
             $table->timestamps();
         });
     }
