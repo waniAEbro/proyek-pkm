@@ -72,7 +72,7 @@
         }
     }
 
-    @media screen and (min-width: 900px) {
+    @media screen and (min-width: 991px) {
         .hadir {
             display : none!important;
         }
@@ -96,25 +96,19 @@
         <!-- Menambah logo -->
         
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-bar top-bar"></span>
-        <span class="navbar-toggler-bar middle-bar"></span>
-        <span class="navbar-toggler-bar bottom-bar"></span>
+        <span class="navbar-toggler-bar top-bar bg-dark"></span>
+        <span class="navbar-toggler-bar middle-bar bg-dark"></span>
+        <span class="navbar-toggler-bar bottom-bar bg-dark"></span>
         </button>
     </div>
-    <div class="collapse navbar-collapse justify-content-end page-header-image" id="navigation"  data-nav-image="/img/Background.png"> 
-
-                    <div class="page-mobile-menu-header hadir">
-                        <div class="page-mobile-popup-logo page-mobile-menu-logo fixed-top"style="left: 5vh;margin-top: 4vh!important; margin-bottom: 60px;!important">
-                                        <a >
-                                       <img src="https://drive.google.com/uc?export=view&id=1tOpOiuy-Y06a3W37FZ0Zj1DUDTmigCqR" alt="" style="max-width: 15vh;" >
-                                         </a>
-                                    </div>
-                    </div>
-
-    
-
+    <div class="collapse navbar-collapse justify-content-end page-header-image" id="navigation"  data-nav-image="https://drive.google.com/uc?export=view&id=1_Qm6Rr_4dIipg8zsfKemqoIn6SH52Q_u"> 
         <ul class="navbar-nav text-center">
-        <li class="nav-item text-black">
+            <li class="nav-item hadir">
+                <a >
+                    <img src="https://drive.google.com/uc?export=view&id=1tOpOiuy-Y06a3W37FZ0Zj1DUDTmigCqR" alt="" style="height:30px" >
+                </a>
+            </li>
+        <li class="nav-item">
             <a class="nav-link" href="/">
                 <p>Home</p>
             </a>

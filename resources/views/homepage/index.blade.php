@@ -28,9 +28,9 @@
   <h1 style="margin-top: 135px!important; margin-bottom: 60px;!important" class="text-center"; >
     <strong>Rumah Kompetisi Class</strong>
   </h1>
-  <div class="row row-cols-md-3 g-4 justify-content-center">
+  <div class="row g-4 justify-content-center">
     @foreach($kelas as $item)
-    <div class="col-md-4 d-flex justify-content-center">
+    <div class="col-lg-4 d-flex justify-content-center">
       <div class="card overflow-hidden" style="max-width: 20rem; border-radius: 20px; box-shadow: black">
         <img class="card-img-top img-raised" src="@if($item->background == null) https://drive.google.com/uc?export=view&id=1_Qm6Rr_4dIipg8zsfKemqoIn6SH52Q_u @else {{$item->background}} @endif" alt="Card image cap" style="border-radius: 20px; filter: brightness(70%)">
         <div class="text-white card-img-overlay overflow-hidden row align-items-center" style="height: 48%">
@@ -49,9 +49,9 @@
             <img src="@if($item->intansi == null) https://lppm.unnes.ac.id/storage/2015/08/Logo-Transparan-Warna-1.png @else {{$item->intansi}} @endif" alt="">
           </div>
         </div>
-        <div class="card-body text-truncate" style="max-height: 275px" >
+        <div class="card-body" style="max-height: 275px" >
           <h5 class="card-title text-center"><strong>Rp. {{$item->harga_baru}} ,-</strong></h5>
-          <p class="card-text">{{$item->deskripsi_singkat}}</p>
+          <p class="card-text text-truncate">{{$item->deskripsi_singkat}}</p>
         </div>
         <div class="card-footer bg-transparent pl-3 pr-3">
           <div class="d-flex justify-content-between align-items-center">
@@ -111,9 +111,9 @@
                 </button>
               </div>
               <h1 class="text-center"><strong>Promo Platinum</strong></h1>
-              <div class="row row-cols-md-3 g-4 justify-content-center">
+              <div class="row g-4 justify-content-center">
                 @foreach($platinum as $item)
-                  <div class="col-md-4 d-flex justify-content-center">
+                  <div class="col-lg-4 d-flex justify-content-center">
                     <div class="card overflow-hidden" style="max-width: 20rem; border-radius: 20px; box-shadow: black">
                       <img class="card-img-top img-raised" src="@if($item->background == null) https://drive.google.com/uc?export=view&id=1_Qm6Rr_4dIipg8zsfKemqoIn6SH52Q_u @else {{$item->background}} @endif" alt="Card image cap" style="border-radius: 20px; filter: brightness(70%)">
                       <div class="text-white card-img-overlay overflow-hidden row align-items-center" style="height: 48%">
@@ -132,9 +132,9 @@
                           <img src="@if($item->intansi == null) https://lppm.unnes.ac.id/storage/2015/08/Logo-Transparan-Warna-1.png @else {{$item->intansi}} @endif" alt="">
                         </div>
                       </div>
-                      <div class="card-body text-truncate" style="max-height: 275px" >
+                      <div class="card-body" style="max-height: 275px" >
                         <h5 class="card-title text-center"><strong>Rp. {{$item->harga_baru}} ,-</strong></h5>
-                        <p class="card-text">{{$item->deskripsi_singkat}}</p>
+                        <p class="card-text text-truncate">{{$item->deskripsi_singkat}}</p>
                       </div>
                       <div class="card-footer bg-transparent pl-3 pr-3">
                         <div class="d-flex justify-content-between align-items-center">
