@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" href="/img/favicon.png">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <title>
-    Rumah Kompetisi
+    Rumah Kompetisi - {{$title}}
 </title>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
 <!--     Fonts and icons     -->
@@ -19,7 +19,7 @@
 <!-- CSS Just for demo purpose, don't include it in your project -->
 <link href="/demo/demo.css" rel="stylesheet" />
 <style>
-    .page-header {
+    .home-header {
         min-height: 0;
         height: 400px!important;
     }
@@ -126,7 +126,7 @@
             </form>
         </li>
         <li class="nav-item">
-            <a class="nav-link btn btn-neutral btn-round" href="#">
+            <a class="nav-link btn btn-neutral btn-round" href="login">
             Login
             </a>
         </li>
