@@ -71,6 +71,13 @@
             display : none!important;
         }
     }
+
+    @media screen and (min-width: 900px) {
+        .hadir {
+            display : none!important;
+        }
+    }
+
     
 </style>
 </head>
@@ -80,7 +87,7 @@
 <nav class="navbar navbar-expand-lg bg-light fixed-top navbar-transparent " @if($title != "Login")color-on-scroll="50"@endif>
     <div class="container">
     <div class="navbar-translate">
-        <div class="page-header-image navbar-brand">
+        <div class="page-header-image navbar-brand ">
             <a class="navbar-brand" href="/">
                 <img src="https://drive.google.com/uc?export=view&id=1tOpOiuy-Y06a3W37FZ0Zj1DUDTmigCqR" alt="" style="height: 30px" >
             </a>
@@ -94,8 +101,19 @@
         <span class="navbar-toggler-bar bottom-bar"></span>
         </button>
     </div>
-    <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="/img/blurred-image-1.jpg">
-        <ul class="navbar-nav">
+    <div class="collapse navbar-collapse justify-content-end page-header-image" id="navigation"  data-nav-image="/img/Background.png"> 
+
+                    <div class="page-mobile-menu-header hadir">
+                        <div class="page-mobile-popup-logo page-mobile-menu-logo fixed-top"style="left: 5vh;margin-top: 4vh!important; margin-bottom: 60px;!important">
+                                        <a >
+                                       <img src="https://drive.google.com/uc?export=view&id=1tOpOiuy-Y06a3W37FZ0Zj1DUDTmigCqR" alt="" style="max-width: 15vh;" >
+                                         </a>
+                                    </div>
+                    </div>
+
+    
+
+        <ul class="navbar-nav text-center">
         <li class="nav-item text-black">
             <a class="nav-link" href="/">
                 <p>Home</p>
@@ -153,9 +171,9 @@
         <nav>
             <ul>
             <li>
-                <a href="https://wa.me/08554511221" target="_blank">
+                <a href="https://wa.me/085172436901" target="_blank">
                     <i class="fa-solid fa-phone"></i>
-                    08554511221
+                    085172436901
                 </a>
             </li>
             <li>
