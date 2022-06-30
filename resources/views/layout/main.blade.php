@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8" />
 <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-icon.png">
-<link rel="icon" type="image/png" href="/img/favicon.png">
+<link rel="icon" type="image/png" href="https://drive.google.com/uc?export=view&id=1O_cdN2kyuG_JgyldWFrWXKPTpdywY7Zr">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <title>
     Rumah Kompetisi - {{$title}}
@@ -75,9 +75,11 @@
 <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="50">
     <div class="container">
     <div class="navbar-translate">
-        <a class="navbar-brand" href="/" rel="tooltip" title="Belajar Riset dan Menulis Karya Ilmiah dengan Mudah serta Menyenangkan" data-placement="bottom">
-        Rumah Kompetisi
-        </a>
+        <div class="page-header-image navbar-brand">
+            <img src="https://drive.google.com/uc?export=view&id=1tOpOiuy-Y06a3W37FZ0Zj1DUDTmigCqR" alt="" style="height: 6vh" >
+        </div>
+        <<!-- Menambah logo -->
+        
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-bar top-bar"></span>
         <span class="navbar-toggler-bar middle-bar"></span>
@@ -96,24 +98,11 @@
                 <p>Info Event</p>
             </a>
         </li>
-        <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink1" data-toggle="dropdown">
-                <p>Paket Kelas</p>
+        <li class="nav-item">
+            <a  class="nav-link " href="#">
+                <p>Tentang Kami</p>
             </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink1">
-                <a class="dropdown-item" href="/">
-                    <p>English Class</p>
-                </a>
-                <a class="dropdown-item" href="/">
-                    <p>English Class</p>
-                </a>
-                <a class="dropdown-item" href="/">
-                    <p>English Class</p>
-                </a>
-                <a class="dropdown-item" href="/">
-                    <p>English Class</p>
-                </a>
-            </div>
+
         </li>
         <li class="nav-item">
             <form>
