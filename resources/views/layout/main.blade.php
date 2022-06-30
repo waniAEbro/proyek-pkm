@@ -125,10 +125,24 @@
                 </div>
             </form>
         </li>
+        @auth
         <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">
+                <p>Admin</p>
+            </a>
+        </li>
+        @endauth
+        <li class="nav-item">
+            @guest
             <a class="nav-link btn btn-neutral btn-round" href="login">
             Login
             </a>
+            @endguest
+            @auth
+            <a class="nav-link btn btn-neutral btn-round" href="logout">
+                Log Out
+                </a>
+            @endauth
         </li>
         </ul>
     </div>

@@ -9,7 +9,8 @@
       <div class="container">
         <div class="col-md-4 ml-auto mr-auto">
           <div class="card card-login card-plain">
-            <form class="form" method="" action="">
+            <form class="form" method="post" action="/login">
+              @csrf
               <div class="card-header text-center">
                 <div class="logo-container">
                   <img src="/img/now-logo.png" alt="">
@@ -22,7 +23,12 @@
                       <i class="now-ui-icons users_circle-08"></i>
                     </span>
                   </div>
-                  <input type="text" class="form-control" placeholder="First Name...">
+                  <input type="email" name="email" class="form-control @error ("email") is-invalid @enderror" placeholder="Email ...">
+                  @error ("email")
+                      <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                          {{$message}}
+                      </div>
+                  @enderror
                 </div>
                 <div class="input-group no-border input-lg">
                   <div class="input-group-prepend">
@@ -30,21 +36,12 @@
                       <i class="now-ui-icons text_caps-small"></i>
                     </span>
                   </div>
-                  <input type="text" placeholder="Last Name..." class="form-control" />
+                  <input type="password" name="password" placeholder="Password ..." class="form-control" />
                 </div>
               </div>
               <div class="card-footer text-center">
-                <a href="#pablo" class="btn btn-primary btn-round btn-lg btn-block">Get Started</a>
-                <div class="pull-left">
-                  <h6>
-                    <a href="#pablo" class="link">Create Account</a>
-                  </h6>
-                </div>
-                <div class="pull-right">
-                  <h6>
-                    <a href="#pablo" class="link">Need Help?</a>
-                  </h6>
-                </div>
+                <button type="submit" href="#pablo" class="btn btn-primary btn-round btn-lg btn-block">Login</button>
+              </div>
             </form>
             </div>
           </div>
