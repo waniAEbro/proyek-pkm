@@ -18,10 +18,11 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        \App\Models\User::factory()->create([
+        \App\Models\User::create([
             'name' => 'Rumah Kompetisi',
             'email' => 'rumahkompetisi@gmail.com',
-            "password" => Hash::make("kolaborasi1!")
+            "password" => Hash::make("kolaborasi1!"),
+            'email_verified_at' => now()
         ]);
     }
 }
