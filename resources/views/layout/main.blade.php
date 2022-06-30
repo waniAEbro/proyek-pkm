@@ -55,6 +55,18 @@
     .filter-dark:after {
         background-image: linear-gradient(to bottom, rgba(5,5,5,0), rgba(5,5,5,1));
     }
+
+    @media(max-width: 1200px) {
+        .hilang {
+            bottom:23vh!important;
+        }
+    }
+
+    @media(max-width: 992px) {
+        .hilang {
+            display : none!important;
+        }
+    }
 </style>
 </head>
 
@@ -126,30 +138,30 @@
 @yield("main")
 
 <footer class="footer" data-background-color="black">
-    <div class=" container ">
-    <nav>
-        <ul>
-        <li>
-            <a href="https://wa.me/08554511221" target="_blank">
-                <i class="fa-solid fa-phone"></i>
-                08554511221
-            </a>
-        </li>
-        <li>
-            <a href="mailto:rumahkompetisi@gmail.com">
-                <i class="fa-solid fa-envelope"></i>
-                rumahkompetisi@gmail.com
-            </a>
-        </li>
-        </ul>
-    </nav>
-    <div class="copyright" id="copyright">
-        &copy;
-        <script>
-        document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
-        </script>, Rumah Kompetisi, Designed by
-        <a href="https://www.invisionapp.com" target="_blank">Invision</a>
-    </div>
+    <div class=" container">
+        <nav>
+            <ul>
+            <li>
+                <a href="https://wa.me/08554511221" target="_blank">
+                    <i class="fa-solid fa-phone"></i>
+                    08554511221
+                </a>
+            </li>
+            <li>
+                <a href="mailto:rumahkompetisi@gmail.com">
+                    <i class="fa-solid fa-envelope"></i>
+                    rumahkompetisi@gmail.com
+                </a>
+            </li>
+            </ul>
+        </nav>
+        <div class="copyright" id="copyright">
+            &copy;
+            <script>
+            document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
+            </script>, Rumah Kompetisi, Designed by
+            <a href="https://www.invisionapp.com" target="_blank">Invision</a>
+        </div>
     </div>
 </footer>
 </div>
