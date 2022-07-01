@@ -10,8 +10,8 @@ class WhatsappController extends Controller
 {
     public function whatsapp(Request $request) {
         $data = $request->all();
-        $number = $data["number"];
-        $message = $data["message"];
+        $number = $data["nomor"];
+        $message = $data["pesan"];
 
         if (preg_match("/halo/i", $message)) {
             Http::post("https://wa-pkm.herokuapp.com/send", [
