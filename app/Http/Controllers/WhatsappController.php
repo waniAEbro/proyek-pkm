@@ -23,6 +23,16 @@ class WhatsappController extends Controller
 				"message" => "halo juga"
 			]);
         } else if (preg_match("/kelas/i", $message)) {
+
+            $pesan = [];
+
+            foreach ($kelas as $item) {
+                $pesan[] = [
+                    "title" => $item->nama,
+                    "description" => $item->deskripsi_singkat
+                ];
+            }
+
             Http::post("https://wa-pkm.herokuapp.com/sendlist", [
                 'number' => $number,
                 'body' => 'List Kelas',
@@ -33,14 +43,7 @@ class WhatsappController extends Controller
                             'title' => 'ini pesan',
                             'rows' => 
                                 [
-                                        [
-                                            'title' => 'produk 1',
-                                            'description' => 'ini adalah list produk 1',
-                                        ],
-                                        [
-                                            'title' => 'produk 1',
-                                            'description' => 'ini adalah list produk 1',
-                                        ]
+                                    $pesan
                                 ],
                         ],
                     ],
