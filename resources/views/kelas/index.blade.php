@@ -44,7 +44,7 @@
         @endforeach
         <tr>
             <td class="text-center" colspan="9">Tambah Kelas</td>
-            <td>
+            <td class="text-center">
                 <a href="/kelas/create" rel="tooltip" class="btn btn-info rounded-pill text-white">
                     Tambah
                 </a>

@@ -41,6 +41,6 @@
             <label for="exampleFormControlTextarea1">Deskripsi</label>
             <textarea class="form-control" required name="deskripsi_singkat" id="exampleFormControlTextarea1" rows="1">{{$kelas->deskripsi_singkat}}</textarea>
         </div>
-        <button class="btn btn-success">Tambah Kelas</button>
+        <button type="submit" class="btn btn-success">Tambah Kelas</button>
     </form>
 @endsection

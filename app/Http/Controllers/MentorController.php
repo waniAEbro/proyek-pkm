@@ -15,7 +15,8 @@ class MentorController extends Controller
     public function index()
     {
         return view("mentor.index", [
-            "title" => "Mentor"
+            "title" => "Mentor",
+            "mentor" => Mentor::paginate(10)
         ]);
     }
 
@@ -26,7 +27,9 @@ class MentorController extends Controller
      */
     public function create()
     {
-        //
+        return view("mentor.create", [
+            "title" => "Mentor"
+        ]);
     }
 
     /**
@@ -37,7 +40,12 @@ class MentorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Mentor::create([
+            "nama" => $request->nama,
+            "gambar" => $request->gambar,
+            "deskripsi_singkat" => $request->deskripsi_singkat
+        ]);
+        return redirect("/mentor");
     }
 
     /**
@@ -46,7 +54,7 @@ class MentorController extends Controller
      * @param  \App\Models\Mentor  $mentor
      * @return \Illuminate\Http\Response
      */
-    public function show(Mentor $mentor)
+    public function show($id)
     {
         //
     }
@@ -57,9 +65,12 @@ class MentorController extends Controller
      * @param  \App\Models\Mentor  $mentor
      * @return \Illuminate\Http\Response
      */
-    public function edit(Mentor $mentor)
+    public function edit($id)
     {
-        //
+        return view("mentor.edit", [
+            "title" => "Mentor",
+            "mentor" => Mentor::where("id", $id)->first()
+        ]);
     }
 
     /**
@@ -69,9 +80,14 @@ class MentorController extends Controller
      * @param  \App\Models\Mentor  $mentor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Mentor $mentor)
+    public function update(Request $request, $id)
     {
-        //
+        Mentor::where("id", $id)->update([
+            "nama" => $request->nama,
+            "gambar" => $request->gambar,
+            "deskripsi_singkat" => $request->deskripsi_singkat
+        ]);
+        return redirect("/mentor");
     }
 
     /**
@@ -80,8 +96,9 @@ class MentorController extends Controller
      * @param  \App\Models\Mentor  $mentor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Mentor $mentor)
+    public function destroy($id)
     {
-        //
+        Mentor::destroy($id);
+        return redirect("/mentor");
     }
 }

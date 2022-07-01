@@ -40,7 +40,16 @@ class PlatinumController extends Controller
      */
     public function store(Request $request)
     {
-        Platinum::create($request->all());
+        Platinum::create([
+            "nama" => $request->nama,
+            "diskon" => $request->diskon,
+            "harga_lama" => $request->harga_lama,
+            "harga_baru" => $request->harga_baru,
+            "deskripsi_singkat" => $request->deskripsi_singkat,
+            "instansi" => $request->instansi,
+            "background" => $request->background,
+            "masa" => $request->masa
+        ]);
         return redirect("/platinum");
     }
 

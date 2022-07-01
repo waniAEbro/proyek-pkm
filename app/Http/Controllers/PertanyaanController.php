@@ -15,7 +15,8 @@ class PertanyaanController extends Controller
     public function index()
     {
         return view("pertanyaan.index", [
-            "title" => "Pertanyaan"
+            "title" => "Pertanyaan",
+            "pertanyaan" => Pertanyaan::paginate(10)
         ]);
     }
 
@@ -26,7 +27,9 @@ class PertanyaanController extends Controller
      */
     public function create()
     {
-        //
+        return view("pertanyaan.create", [
+            "title" => "Pertanyaan"
+        ]);
     }
 
     /**
@@ -37,7 +40,12 @@ class PertanyaanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Pertanyaan::create([
+            "pertanyaan" => $request->pertanyaan,
+            "jawaban" => $request->jawaban
+        ]);
+
+        return redirect("/pertanyaan");
     }
 
     /**
@@ -46,7 +54,7 @@ class PertanyaanController extends Controller
      * @param  \App\Models\Pertanyaan  $pertanyaan
      * @return \Illuminate\Http\Response
      */
-    public function show(Pertanyaan $pertanyaan)
+    public function show($id)
     {
         //
     }
@@ -57,9 +65,12 @@ class PertanyaanController extends Controller
      * @param  \App\Models\Pertanyaan  $pertanyaan
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pertanyaan $pertanyaan)
+    public function edit($id)
     {
-        //
+        return view("pertanyaan.edit", [
+            "title" => "Pertanyaan",
+            "pertanyaan" => Pertanyaan::where("id", $id)->first()
+        ]);
     }
 
     /**
@@ -69,9 +80,14 @@ class PertanyaanController extends Controller
      * @param  \App\Models\Pertanyaan  $pertanyaan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pertanyaan $pertanyaan)
+    public function update(Request $request, $id)
     {
-        //
+        Pertanyaan::where("id", $id)->update([
+            "pertanyaan" => $request->pertanyaan,
+            "jawaban" => $request->jawaban
+        ]);
+
+        return redirect("/pertanyaan");
     }
 
     /**
@@ -80,8 +96,9 @@ class PertanyaanController extends Controller
      * @param  \App\Models\Pertanyaan  $pertanyaan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pertanyaan $pertanyaan)
+    public function destroy($id)
     {
-        //
+        Pertanyaan::destroy($id);
+        return redirect("/pertanyaan");
     }
 }

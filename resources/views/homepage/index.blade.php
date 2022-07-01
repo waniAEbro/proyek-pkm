@@ -39,10 +39,10 @@
             <i class="fa-solid fa-tags d-inline"></i>
             <p class="d-inline">Diskon {{$item->diskon}} %</p>
             @endif
-            <h3 class="m-0"><strong>{{$item->nama}}</strong></h3>
+            <h4 class="m-0"><strong>{{$item->nama}}</strong></h4>
             <p>{{$item->masa}} Bulan</p>
             @if ($item->harga_lama != null)
-            <h4><s>Rp {{$item->harga_lama}} ,-</s></h4>
+            <h5><s>Rp {{$item->harga_lama}} ,-</s></h5>
             @endif
           </div>
           <div class="col-4">
