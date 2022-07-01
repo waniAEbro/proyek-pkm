@@ -34,20 +34,17 @@ class WhatsappController extends Controller
             }
 
             Http::post("https://wa-pkm.herokuapp.com/sendlist", [
-                'number' => $number,
-                'body' => 'List Kelas',
-                'title' => 'List Kelas',
-                'message' => 
+                "number" => $number,
+                "body" => "List Kelas",
+                "title" => "List Kelas",
+                "message" => 
                     [
-                        [
-                            'title' => 'ini pesan',
-                            'rows' => 
-                                [
-                                    $pesan
-                                ],
-                        ],
-                    ],
-                ]);
+                        0 => [
+                            "title" => "ini pesan",
+                            "rows" => $pesan
+                        ]   
+                    ]
+            ]);
         }
     }
 }
