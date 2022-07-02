@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string("harga_lama")->nullable();
             $table->string("harga_baru");
             $table->text("deskripsi_singkat");
-            $table->string("background")->nullable();
-            $table->string("instansi")->nullable();
+            $table->text("background")->nullable();
+            $table->text("instansi")->nullable();
             $table->timestamps();
         });
     }

@@ -235,7 +235,7 @@
                   <div class="item">
                     <div class="position-relative d-flex text-white">
                       <div class="filter filter-dark">
-                        <img src="{{$item->gambar}}" alt="">
+                        <img src="@if($item->gambar != null) {{$item->gambar}} @else https://img.freepik.com/free-photo/portrait-young-asia-lady-with-positive-expression-arms-crossed-smile-broadly-dressed-casual-clothing-looking-camera-pink-background_7861-3201.jpg?t=st=1656720589~exp=1656721189~hmac=b5a386e7f63952a0c7f3cda3f92d9903eb5f1844085dc84f772b032e3669e41d&w=1380 @endif" alt="">
                       </div>
                       <div class="position-absolute text-center" style="left: 50%; bottom: 0; transform: translate(-50%, 0);">
                         <h4><strong>{{$item->nama}}</strong></h4>

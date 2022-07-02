@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('mentors', function (Blueprint $table) {
             $table->id();
             $table->string("nama");
-            $table->string("gambar");
+            $table->text("gambar")->nullable();
             $table->text("deskripsi_singkat")->nullable();
             $table->timestamps();
         });
