@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pertanyaan;
+use App\Models\Pembelajaran;
 use Illuminate\Http\Request;
 
-class PertanyaanController extends Controller
+class PembelajaranController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class PertanyaanController extends Controller
      */
     public function index()
     {
-        return view("pertanyaan.index", [
-            "title" => "Pertanyaan",
-            "pertanyaan" => Pertanyaan::paginate(10)
+        return view("pembelajaran.index", [
+            "title" => "Pembelajaran",
+            "pembelajaran" => Pembelajaran::paginate(10)
         ]);
     }
 
@@ -27,8 +27,8 @@ class PertanyaanController extends Controller
      */
     public function create()
     {
-        return view("pertanyaan.create", [
-            "title" => "Pertanyaan"
+        return view("pembelajaran.create", [
+            "title" => "Pembelajaran"
         ]);
     }
 
@@ -40,18 +40,17 @@ class PertanyaanController extends Controller
      */
     public function store(Request $request)
     {
-        Pertanyaan::create([
-            "pertanyaan" => $request->pertanyaan,
-            "jawaban" => $request->jawaban
+        Pembelajaran::create([
+            "pembelajaran" => $request->pembelajaran
         ]);
 
-        return redirect("/pertanyaan");
+        return redirect("/pembelajaran");
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Pertanyaan  $pertanyaan
+     * @param  \App\Models\Pembelajaran  $pembelajaran
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -62,14 +61,14 @@ class PertanyaanController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Pertanyaan  $pertanyaan
+     * @param  \App\Models\Pembelajaran  $pembelajaran
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        return view("pertanyaan.edit", [
-            "title" => "Pertanyaan",
-            "pertanyaan" => Pertanyaan::find($id)->first()
+        return view("pembelajaran.edit", [
+            "title" => "pembelajaran",
+            "pembelajaran" => Pembelajaran::find($id)->first()
         ]);
     }
 
@@ -77,28 +76,27 @@ class PertanyaanController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Pertanyaan  $pertanyaan
+     * @param  \App\Models\Pembelajaran  $pembelajaran
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        Pertanyaan::find($id)->update([
-            "pertanyaan" => $request->pertanyaan,
-            "jawaban" => $request->jawaban
+        Pembelajaran::find($id)->update([
+            "pembelajaran" => $request->pembelajaran
         ]);
 
-        return redirect("/pertanyaan");
+        return redirect("/pembelajaran");
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Pertanyaan  $pertanyaan
+     * @param  \App\Models\Pembelajaran  $pembelajaran
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        Pertanyaan::destroy($id);
-        return redirect("/pertanyaan");
+        Pembelajaran::destroy($id);
+        return redirect("/pembelajaran");
     }
 }

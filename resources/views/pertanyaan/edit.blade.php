@@ -12,6 +12,6 @@
             <label for="jawaban">Jawaban</label>
             <input type="text" class="form-control" value="{{$pertanyaan->jawaban}}" required name="jawaban" id="jawaban" placeholder="ex : Rahman Surahman">
         </div>
-        <button type="submit" class="btn btn-success">Tambah Pertanyaan</button>
+        <button type="submit" class="btn btn-success">Edit Pertanyaan</button>
     </form>
 @endsection

@@ -69,7 +69,7 @@ class MentorController extends Controller
     {
         return view("mentor.edit", [
             "title" => "Mentor",
-            "mentor" => Mentor::where("id", $id)->first()
+            "mentor" => Mentor::find($id)->first()
         ]);
     }
 
@@ -82,7 +82,7 @@ class MentorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Mentor::where("id", $id)->update([
+        Mentor::find($id)->update([
             "nama" => $request->nama,
             "gambar" => $request->gambar,
             "deskripsi_singkat" => $request->deskripsi_singkat

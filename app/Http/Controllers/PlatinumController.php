@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Platinum;
+use App\Models\Fasilitas;
+use App\Models\Pembelajaran;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 class PlatinumController extends Controller
 {
@@ -28,7 +32,9 @@ class PlatinumController extends Controller
     public function create()
     {
         return view("platinum.create", [
-            "title" => "Platinum"
+            "title" => "Platinum",
+            "fasilitas" => Fasilitas::get(),
+            "pembelajaran" => Pembelajaran::get()
         ]);
     }
 
@@ -50,6 +56,23 @@ class PlatinumController extends Controller
             "background" => $request->background,
             "masa" => $request->masa
         ]);
+        $platinum = Platinum::latest()->first()->id;
+        if($request->fasilitas) {
+            foreach($request->fasilitas as $item) {
+                DB::table("fasilitas_platinum")->insert([
+                    "fasilitas_id" => $item,
+                    "platinum_id" => $platinum
+                ]);
+            }
+        }
+        if($request->pembelajaran){
+            foreach($request->pembelajaran as $item) {
+                DB::table("pembelajaran_platinum")->insert([
+                    "pembelajaran_id" => $item,
+                    "platinum_id" => $platinum
+                ]);
+            }
+        }
         return redirect("/platinum");
     }
 
@@ -73,8 +96,10 @@ class PlatinumController extends Controller
     public function edit($id)
     {
         return view("platinum.edit", [
-            "platinum" => Platinum::where("id", $id)->first(),
-            "title" => "Platinum"
+            "platinum" => Platinum::find($id)->first(),
+            "title" => "Platinum",
+            "fasilitas" => Fasilitas::get(),
+            "pembelajaran" => Pembelajaran::get()
         ]);
     }
 
@@ -87,7 +112,9 @@ class PlatinumController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Platinum::where("id", $id)->update([
+        DB::table("fasilitas_platinum")->where("platinum_id", $id)->delete();
+        DB::table("pembelajaran_platinum")->where("platinum_id", $id)->delete();
+        Platinum::find($id)->update([
             "nama" => $request->nama,
             "diskon" => $request->diskon,
             "harga_lama" => $request->harga_lama,
@@ -97,6 +124,22 @@ class PlatinumController extends Controller
             "background" => $request->background,
             "masa" => $request->masa
         ]);
+        if($request->fasilitas) {
+            foreach($request->fasilitas as $item) {
+                DB::table("fasilitas_platinum")->insert([
+                    "fasilitas_id" => $item,
+                    "platinum_id" => $id
+                ]);
+            }
+        }
+        if($request->pembelajaran){
+            foreach($request->pembelajaran as $item) {
+                DB::table("pembelajaran_platinum")->insert([
+                    "pembelajaran_id" => $item,
+                    "platinum_id" => $id
+                ]);
+            }
+        }
         return redirect("/platinum");
     }
 
@@ -108,6 +151,9 @@ class PlatinumController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Platinum::destroy($id);
+        DB::table("fasilitas_platinum")->where("platinum_id", $id)->delete();
+        DB::table("pembelajaran_platinum")->where("platinum_id", $id)->delete();
+        return redirect("/platinum");
     }
 }

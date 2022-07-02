@@ -37,10 +37,32 @@
             <input type="text" class="form-control" id="instansi" name="instansi" value="{{$platinum->instansi}}" placeholder="ex : https://shopee.co.id/STIKER-BEBAS-GAMBAR-APA-AJA-i.120325226.3434298369">
             <small class="form-text text-muted"><span class="text-danger">*</span>isi dengan link gambar</small>
         </div>
+        @if($fasilitas->isNotEmpty())<label class="d-block">Fasilitas</label>@endif
+        <div class="form-group row gap-2">
+            @foreach($fasilitas as $item)
+            <div class="form-check col-3">
+                <label class="form-check-label">
+                <input class="form-check-input text-truncate" type="checkbox" id="{{$item->id}}" name="fasilitas[]" {{ ($platinum->fasilitas->contains("id", $item->id)) ? "checked" : "" }} value="{{$item->id}}"> {{$item->fasilitas}}
+                <span class="form-check-sign"></span>
+                </label>
+            </div>
+            @endforeach
+        </div>
+        @if($pembelajaran->isNotEmpty())<label class="d-block">Pembelajaran</label>@endif
+        <div class="form-group row gap-2">
+            @foreach($pembelajaran as $item)
+            <div class="form-check col-3">
+                <label class="form-check-label">
+                <input class="form-check-input text-truncate" type="checkbox" id="{{$item->id}}" {{ ($platinum->pembelajaran->contains("id", $item->id)) ? "checked" : "" }} name="pembelajaran[]" value="{{$item->id}}"> {{$item->pembelajaran}}
+                <span class="form-check-sign"></span>
+                </label>
+            </div>
+            @endforeach
+        </div>
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Deskripsi</label>
             <textarea class="form-control" required name="deskripsi_singkat" id="exampleFormControlTextarea1" rows="1">{{$platinum->deskripsi_singkat}}</textarea>
         </div>
-        <button type="submit" class="btn btn-success">Tambah platinum</button>
+        <button type="submit" class="btn btn-success">Edit platinum</button>
     </form>
 @endsection

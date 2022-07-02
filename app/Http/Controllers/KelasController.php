@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kelas;
+use App\Models\Fasilitas;
+use App\Models\Pembelajaran;
 use Illuminate\Http\Request;
+use App\Models\FasilitasKelas;
+use App\Models\KelasPembelajaran;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
 class KelasController extends Controller
@@ -29,7 +34,9 @@ class KelasController extends Controller
     public function create()
     {
         return view("kelas.create", [
-            "title" => "Kelas"
+            "title" => "Kelas",
+            "fasilitas" => Fasilitas::get(),
+            "pembelajaran" => Pembelajaran::get()
         ]);
     }
 
@@ -51,6 +58,23 @@ class KelasController extends Controller
             "background" => $request->background,
             "masa" => $request->masa
         ]);
+        $kelas = Kelas::latest()->first()->id;
+        if($request->fasilitas) {
+            foreach($request->fasilitas as $item) {
+                DB::table("fasilitas_kelas")->insert([
+                    "fasilitas_id" => $item,
+                    "kelas_id" => $kelas
+                ]);
+            }
+        }
+        if($request->pembelajaran){
+            foreach($request->pembelajaran as $item) {
+                DB::table("kelas_pembelajaran")->insert([
+                    "pembelajaran_id" => $item,
+                    "kelas_id" => $kelas
+                ]);
+            }
+        }
         return redirect("/kelas");
     }
 
@@ -74,8 +98,10 @@ class KelasController extends Controller
     public function edit($id)
     {
         return view("kelas.edit", [
-            "kelas" => Kelas::where("id", $id)->first(),
-            "title" => "Kelas"
+            "kelas" => Kelas::find($id)->first(),
+            "title" => "Kelas",
+            "fasilitas" => Fasilitas::get(),
+            "pembelajaran" => Pembelajaran::get()
         ]);
     }
 
@@ -88,7 +114,10 @@ class KelasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Kelas::where("id", $id)->update([
+        $kelas = Kelas::find($id)->first();
+        DB::table("fasilitas_kelas")->where("kelas_id", $id)->delete();
+        DB::table("kelas_pembelajaran")->where("kelas_id", $id)->delete();
+        $kelas->update([
             "nama" => $request->nama,
             "diskon" => $request->diskon,
             "harga_lama" => $request->harga_lama,
@@ -98,6 +127,22 @@ class KelasController extends Controller
             "background" => $request->background,
             "masa" => $request->masa
         ]);
+        if ($request->fasilitas) {
+            foreach($request->fasilitas as $item) {
+                DB::table("fasilitas_kelas")->insert([
+                    "fasilitas_id" => $item,
+                    "kelas_id" => $id
+                ]);
+            }
+        }
+        if ($request->pembelajaran) {
+            foreach($request->pembelajaran as $item) {
+                DB::table("kelas_pembelajaran")->insert([
+                    "pembelajaran_id" => $item,
+                    "kelas_id" => $id
+                ]);
+            }
+        }
         return redirect("/kelas");
     }
 
@@ -110,6 +155,8 @@ class KelasController extends Controller
     public function destroy($id)
     {
         Kelas::destroy($id);
+        DB::table("fasilitas_kelas")->where("kelas_id", $id)->delete();
+        DB::table("kelas_pembelajaran")->where("kelas_id", $id)->delete();
         return redirect("/kelas");
     }
 }

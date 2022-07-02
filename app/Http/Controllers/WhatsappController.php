@@ -17,10 +17,10 @@ class WhatsappController extends Controller
         $number = $data["nomor"];
         $message = $data["pesan"];
 
-        if (preg_match("/halo/i", $message)) {
+        if (preg_match("/menu/i", $message)) {
             Http::post("https://wa-pkm.herokuapp.com/send", [
 				"number" => $number,
-				"message" => "halo juga"
+				"message" => "Berikut adalah perintah yang bisa digunakan :\n- kelas => menampilkan kelas kelas\n- platinum => menampilkan kelas platinum\n- beli => untuk membeli produk terpilih"
 			]);
         } else if (preg_match("/kelas/i", $message)) {
 
@@ -45,6 +45,41 @@ class WhatsappController extends Controller
                         ]   
                     ]
             ]);
+        } else if (preg_match("/platinum/i", $message)) {
+
+            $pesan = [];
+
+            foreach ($platinum as $item) {
+                $pesan[] = [
+                    "title" => $item->nama,
+                    "description" => $item->deskripsi_singkat
+                ];
+            }
+
+            Http::post("https://wa-pkm.herokuapp.com/sendlist", [
+                "number" => $number,
+                "body" => "List platinum",
+                "title" => "List platinum",
+                "message" => 
+                    [
+                        0 => [
+                            "title" => "ini pesan",
+                            "rows" => $pesan
+                        ]   
+                    ]
+            ]);
+        } else if (preg_match("/kelas/i", explode(" ", $message)[0])) {
+            $index = array_search(explode(" ", $message)[1], array_column($kelas->toArray(), "id"));
+            Http::post("https://wa-pkm.herokuapp.com/send", [
+				"number" => $number,
+				"message" => "Nama Kelas : " . $kelas[$index]->nama . "\nMasa Pembelajaran : " . $kelas[$index]->masa . "\nHarga : " . $kelas[$index]->harga_baru
+			]);
+        } else if (preg_match("/platinum/i", explode(" ", $message)[0])) {
+            $index = array_search(explode(" ", $message)[1], array_column($platinum->toArray(), "id"));
+            Http::post("https://wa-pkm.herokuapp.com/send", [
+				"number" => $number,
+				"message" => "Nama Platinum : " . $platinum[$index]->nama . "\nMasa Pembelajaran : " . $platinum[$index]->masa . "\nHarga : " . $platinum[$index]->harga_baru
+			]);
         }
     }
 }

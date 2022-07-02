@@ -29,8 +29,7 @@
         name='viewport' />
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- CSS Files -->
     <link href="/dashboard/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/dashboard/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
@@ -73,6 +72,18 @@
                 <a href="/pertanyaan">
                 <i class="now-ui-icons ui-1_bell-53"></i>
                 <p>Pertanyaan</p>
+                </a>
+            </li>
+            <li class="@if($title == "Fasilitas") active @endif">
+                <a href="/fasilitas">
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                    <p>Fasilitas</p>
+                </a>
+            </li>
+            <li class="@if($title == "Pembelajaran") active @endif">
+                <a href="/pembelajaran">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <p>Pembelajaran</p>
                 </a>
             </li>
             </ul>

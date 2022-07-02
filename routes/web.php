@@ -6,7 +6,9 @@ use App\Http\Controllers\KelasController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MentorController;
 use App\Http\Controllers\PlatinumController;
+use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\PertanyaanController;
+use App\Http\Controllers\PembelajaranController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +36,7 @@ Route::resource("platinum", PlatinumController::class)->middleware("auth");
 Route::resource("pertanyaan", PertanyaanController::class)->middleware("auth");
 
 Route::resource("mentor", MentorController::class)->middleware("auth");
+
+Route::resource("pembelajaran", PembelajaranController::class)->middleware("auth");
+
+Route::resource("fasilitas", FasilitasController::class)->middleware("auth");

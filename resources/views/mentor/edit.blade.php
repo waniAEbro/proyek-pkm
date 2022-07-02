@@ -17,6 +17,6 @@
             <label for="exampleFormControlTextarea1">Deskripsi</label>
             <textarea class="form-control" required name="deskripsi_singkat" id="exampleFormControlTextarea1" rows="1">{{$mentor->deskripsi_singkat}}</textarea>
         </div>
-        <button type="submit" class="btn btn-success">Tambah Mentor</button>
+        <button type="submit" class="btn btn-success">Edit Mentor</button>
     </form>
 @endsection

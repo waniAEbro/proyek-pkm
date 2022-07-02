@@ -73,7 +73,7 @@
                     </button>
                   </div>
                   <div class="modal-body">
-                    Silakan Kirim Chat "produk {{$item->id}}" untuk mulai memesan
+                    Silakan Kirim Chat "kelas {{$item->id}}" untuk mulai memesan
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -165,7 +165,7 @@
                 </button>
               </div>
               <div class="modal-body">
-                Silakan Kirim Chat "produk {{$item->id}}" untuk mulai memesan
+                Silakan Kirim Chat "platinum {{$item->id}}" untuk mulai memesan
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
