@@ -55,7 +55,7 @@
         </div>
         <div class="card-footer bg-transparent pl-3 pr-3">
           <div class="d-flex justify-content-between align-items-center">
-            <a href="#">more</a>
+            <a href="detail/{{$item -> id}}">more</a>
 
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#kelas{{$item->id}}">
@@ -138,7 +138,7 @@
                     </div>
                     <div class="card-footer bg-transparent pl-3 pr-3">
                       <div class="d-flex justify-content-between align-items-center">
-                        <a href="#">more</a>
+                        <a href="detail/{{$item -> id}}" >more</a>
 
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#platinum{{$item->id}}">

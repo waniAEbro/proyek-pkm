@@ -27,6 +27,10 @@ Route::post("/login", [LoginController::class, "authenticate"]);
 
 Route::get("/logout", [LoginController::class, "logout"])->middleware("auth");
 
+Route::get("detail/{id}", [HomeController::class ,"detail"])->middleware("auth");
+
+Route::get("/about", [HomeController::class, "about"])->middleware("auth");
+
 Route::resource("kelas", KelasController::class)->middleware("auth");
 
 Route::resource("platinum", PlatinumController::class)->middleware("auth");
