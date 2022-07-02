@@ -100,80 +100,82 @@
       <div class="col">
         <h2><strong class="text-primary">Rumah Kompetisi</strong> Platinum Class</h2>
         <p>Pelayanan dan Fasilitas Bagi Para Konsumen yang Ingin Berkonsultasi secara Privat dengan para tentor mengenai persiapan lomba</p>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg"><strong>Spesial Promo</strong></button>
-  
-        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-xl">
-            <div class="modal-content p-4 text-black">
+
+        <div class="modal fade text-dark" id="promo" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+            <div class="modal-content">
               <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><strong>Promo Platinum</strong></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <h1 class="text-center"><strong>Promo Platinum</strong></h1>
-              <div class="row g-4 justify-content-center">
+              <div class="modal-body">
+                <div class="row g-4 justify-content-center">
                 @foreach($platinum as $item)
-                  <div class="col-lg-4 d-flex justify-content-center">
-                    <div class="card overflow-hidden" style="max-width: 20rem; border-radius: 20px; box-shadow: black">
-                      <img class="card-img-top img-raised" src="@if($item->background == null) https://drive.google.com/uc?export=view&id=1_Qm6Rr_4dIipg8zsfKemqoIn6SH52Q_u @else {{$item->background}} @endif" alt="Card image cap" style="border-radius: 20px; filter: brightness(70%)">
-                      <div class="text-white card-img-overlay overflow-hidden row align-items-center" style="height: 48%">
-                        <div class="col-8">
-                          @if ($item->diskon != null)
-                          <i class="fa-solid fa-tags d-inline"></i>
-                          <p class="d-inline">Diskon {{$item->diskon}} %</p>
-                          @endif
-                          <h3 class="m-0"><strong>{{$item->nama}}</strong></h3>
-                          <p>{{$item->masa}} Bulan</p>
-                          @if ($item->harga_lama != null)
-                          <h4><s>Rp {{$item->harga_lama}} ,-</s></h4>
-                          @endif
-                        </div>
-                        <div class="col-4">
-                          <img src="@if($item->intansi == null) https://lppm.unnes.ac.id/storage/2015/08/Logo-Transparan-Warna-1.png @else {{$item->intansi}} @endif" alt="">
-                        </div>
+                <div class="col-lg-4 d-flex justify-content-center">
+                  <div class="card overflow-hidden" style="max-width: 20rem; border-radius: 20px; box-shadow: black">
+                    <img class="card-img-top img-raised" src="@if($item->background == null) https://drive.google.com/uc?export=view&id=1_Qm6Rr_4dIipg8zsfKemqoIn6SH52Q_u @else {{$item->background}} @endif" alt="Card image cap" style="border-radius: 20px; filter: brightness(70%)">
+                    <div class="text-white card-img-overlay overflow-hidden row align-items-center" style="height: 48%">
+                      <div class="col-8">
+                        @if ($item->diskon != null)
+                        <i class="fa-solid fa-tags d-inline"></i>
+                        <p class="d-inline">Diskon {{$item->diskon}} %</p>
+                        @endif
+                        <h4 class="m-0"><strong>{{$item->nama}}</strong></h4>
+                        <p>{{$item->masa}} Bulan</p>
+                        @if ($item->harga_lama != null)
+                        <h5><s>Rp {{$item->harga_lama}} ,-</s></h5>
+                        @endif
                       </div>
-                      <div class="card-body" style="max-height: 275px" >
-                        <h5 class="card-title text-center"><strong>Rp. {{$item->harga_baru}} ,-</strong></h5>
-                        <p class="card-text text-truncate">{{$item->deskripsi_singkat}}</p>
+                      <div class="col-4">
+                        <img src="@if($item->intansi == null) https://lppm.unnes.ac.id/storage/2015/08/Logo-Transparan-Warna-1.png @else {{$item->intansi}} @endif" alt="">
                       </div>
-                      <div class="card-footer bg-transparent pl-3 pr-3">
-                        <div class="d-flex justify-content-between align-items-center">
-                          <a href="#">more</a>
+                    </div>
+                    <div class="card-body" style="max-height: 275px" >
+                      <h5 class="card-title text-center"><strong>Rp. {{$item->harga_baru}} ,-</strong></h5>
+                      <p class="card-text text-truncate">{{$item->deskripsi_singkat}}</p>
+                    </div>
+                    <div class="card-footer bg-transparent pl-3 pr-3">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <a href="#">more</a>
 
-                          <!-- Button trigger modal -->
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#whatsapp{{$item->id}}">
-                            Beli
-                          </button>
-
-                          <!-- Modal -->
-                          <div class="modal fade" id="whatsapp{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="z-index: 1003!important" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h5 class="modal-title" id="exampleModalLabel"><strong>Perhatian</strong></h5>
-                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                  </button>
-                                </div>
-                                <div class="modal-body">
-                                  Silakan Kirim Chat "produk {{$item->id}}" untuk mulai memesan
-                                </div>
-                                <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                  <a href="https://wa.me/085900221521" class="btn btn-primary">Beli</a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#whatsapp{{$item->id}}">
+                          Beli
+                        </button>
                       </div>
                     </div>
                   </div>
-                  @endforeach
+                </div>
+                @endforeach
+              </div>
               </div>
             </div>
           </div>
         </div>
+        @foreach($platinum as $item)
+        <div class="modal fade text-dark" id="whatsapp{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><strong>Perhatian</strong></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Silakan Kirim Chat "produk {{$item->id}}" untuk mulai memesan
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <a href="https://wa.me/085900221521" class="btn btn-primary">Beli</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        @endforeach
+        <button class="btn btn-primary" data-toggle="modal" data-target="#promo"><strong>Spesial Promo</strong></button>
       </div>
       <div class="position-relative col-4 hilang" style="left: 8vh; bottom: 17vh;">
         <img style="width: 20vw; border-radius: 20px;" class="img-raised" src="https://drive.google.com/uc?export=view&id=1l1qCGKEVl6QyrueHDiIxzP54gpKxPmWQ" alt="">
