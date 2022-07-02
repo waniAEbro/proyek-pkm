@@ -146,7 +146,7 @@
                           </button>
 
                           <!-- Modal -->
-                          <div class="modal fade" id="whatsapp{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="z-index: 1003" aria-hidden="true">
+                          <div class="modal fade" id="whatsapp{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="z-index: 1003!important" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                               <div class="modal-content">
                                 <div class="modal-header">
