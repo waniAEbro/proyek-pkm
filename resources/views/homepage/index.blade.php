@@ -58,12 +58,12 @@
             <a href="#">more</a>
 
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#whatsapp{{$item->id}}">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#kelas{{$item->id}}">
               Beli
             </button>
 
             <!-- Modal -->
-            <div class="modal fade" id="whatsapp{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="kelas{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -141,7 +141,7 @@
                         <a href="#">more</a>
 
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#whatsapp{{$item->id}}">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#platinum{{$item->id}}">
                           Beli
                         </button>
                       </div>
@@ -155,7 +155,7 @@
           </div>
         </div>
         @foreach($platinum as $item)
-        <div class="modal fade text-dark" id="whatsapp{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade text-dark" id="platinum{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
             <div class="modal-content">
               <div class="modal-header">
