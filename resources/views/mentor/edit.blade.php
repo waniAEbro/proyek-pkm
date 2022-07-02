@@ -10,7 +10,7 @@
         </div>
         <div class="form-group">
             <label for="gambar">Gambar</label>
-            <input type="text" class="form-control" required id="gambar" name="gambar" value="{{$mentor->gambar}}" placeholder="ex : ex : https://shopee.co.id/STIKER-BEBAS-GAMBAR-APA-AJA-i.120325226.3434298369">
+            <input type="text" class="form-control" id="gambar" name="gambar" value="{{$mentor->gambar}}" placeholder="ex : ex : https://shopee.co.id/STIKER-BEBAS-GAMBAR-APA-AJA-i.120325226.3434298369">
             <small class="form-text text-muted"><span class="text-danger">*</span>dalam bentuk link</small>
         </div>
         <div class="form-group">
