@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Kelas;
 use App\Models\Platinum;
+use App\Models\Mentor;
+use App\Models\Pertanyaan;
 
 class HomeController extends Controller
 {
@@ -12,7 +14,9 @@ class HomeController extends Controller
         return view ( "homepage.index", [
             "title" => "Home",
             "kelas" => Kelas::get(),
-            "platinum" => Platinum::get()
+            "platinum" => Platinum::get(),
+            "mentor" => Mentor::get(),
+            "pertanyaan" => Pertanyaan::get()
         ] );
     }
 }

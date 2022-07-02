@@ -196,7 +196,7 @@
           </div>
         </div>
         <div class="col">
-          <h6>Terpercaya</h6>
+          <h6>Kurikulum Terbaik</h6>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, voluptatum.</p>
         </div>
       </div>
@@ -207,7 +207,7 @@
           </div>
         </div>
         <div class="col">
-          <h6>Terpercaya</h6>
+          <h6>Waktu Fleksibel</h6>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, voluptatum.</p>
         </div>
       </div>
@@ -218,106 +218,32 @@
           </div>
         </div>
         <div class="col">
-          <h6>Terpercaya</h6>
+          <h6>Mentor Profesional</h6>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, voluptatum.</p>
         </div>
       </div>
     </div>
   </div>
 </main>
-<main class="container mt-5">
+<main class="container mt-5" style="@if($mentor->isEmpty()) display:none!important @endif">
+  <h1 class="mt-5 mb-5 text-center"><strong>Mentor Kami</strong></h1>
   <div class="container">
     <div class="row">
       <div class="MultiCarousel" data-items="1,2,3,3" data-slide="1" id="MultiCarousel"  data-interval="1000">
               <div class="MultiCarousel-inner">
+                  @foreach ($mentor as $item)
                   <div class="item">
                     <div class="position-relative d-flex text-white">
                       <div class="filter filter-dark">
-                        <img src="https://drive.google.com/uc?export=view&id=1l1qCGKEVl6QyrueHDiIxzP54gpKxPmWQ" alt="">
+                        <img src="{{$item->gambar}}" alt="">
                       </div>
                       <div class="position-absolute text-center" style="left: 50%; bottom: 0; transform: translate(-50%, 0);">
-                        <h4><strong>Nama Saya</strong></h4>
-                        <p>adalah mentor ternama</p>
+                        <h4><strong>{{$item->nama}}</strong></h4>
+                        <p>{{$item->deskripsi_singkat}}</p>
                       </div>
                     </div>
                   </div>
-                  <div class="item">
-                    <div class="position-relative d-flex text-white">
-                      <div class="filter filter-dark">
-                        <img src="https://drive.google.com/uc?export=view&id=1l1qCGKEVl6QyrueHDiIxzP54gpKxPmWQ" alt="">
-                      </div>
-                      <div class="position-absolute text-center" style="left: 50%; bottom: 0; transform: translate(-50%, 0);">
-                        <h4><strong>Nama Saya</strong></h4>
-                        <p>adalah mentor ternama</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="position-relative d-flex text-white">
-                      <div class="filter filter-dark">
-                        <img src="https://drive.google.com/uc?export=view&id=1l1qCGKEVl6QyrueHDiIxzP54gpKxPmWQ" alt="">
-                      </div>
-                      <div class="position-absolute text-center" style="left: 50%; bottom: 0; transform: translate(-50%, 0);">
-                        <h4><strong>Nama Saya</strong></h4>
-                        <p>adalah mentor ternama</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="position-relative d-flex text-white">
-                      <div class="filter filter-dark">
-                        <img src="https://drive.google.com/uc?export=view&id=1l1qCGKEVl6QyrueHDiIxzP54gpKxPmWQ" alt="">
-                      </div>
-                      <div class="position-absolute text-center" style="left: 50%; bottom: 0; transform: translate(-50%, 0);">
-                        <h4><strong>Nama Saya</strong></h4>
-                        <p>adalah mentor ternama</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="position-relative d-flex text-white">
-                      <div class="filter filter-dark">
-                        <img src="https://drive.google.com/uc?export=view&id=1l1qCGKEVl6QyrueHDiIxzP54gpKxPmWQ" alt="">
-                      </div>
-                      <div class="position-absolute text-center" style="left: 50%; bottom: 0; transform: translate(-50%, 0);">
-                        <h4><strong>Nama Saya</strong></h4>
-                        <p>adalah mentor ternama</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="position-relative d-flex text-white">
-                      <div class="filter filter-dark">
-                        <img src="https://drive.google.com/uc?export=view&id=1l1qCGKEVl6QyrueHDiIxzP54gpKxPmWQ" alt="">
-                      </div>
-                      <div class="position-absolute text-center" style="left: 50%; bottom: 0; transform: translate(-50%, 0);">
-                        <h4><strong>Nama Saya</strong></h4>
-                        <p>adalah mentor ternama</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="position-relative d-flex text-white">
-                      <div class="filter filter-dark">
-                        <img src="https://drive.google.com/uc?export=view&id=1l1qCGKEVl6QyrueHDiIxzP54gpKxPmWQ" alt="">
-                      </div>
-                      <div class="position-absolute text-center" style="left: 50%; bottom: 0; transform: translate(-50%, 0);">
-                        <h4><strong>Nama Saya</strong></h4>
-                        <p>adalah mentor ternama</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="position-relative d-flex text-white">
-                      <div class="filter filter-dark">
-                        <img src="https://drive.google.com/uc?export=view&id=1l1qCGKEVl6QyrueHDiIxzP54gpKxPmWQ" alt="">
-                      </div>
-                      <div class="position-absolute text-center" style="left: 50%; bottom: 0; transform: translate(-50%, 0);">
-                        <h4><strong>Nama Saya</strong></h4>
-                        <p>adalah mentor ternama</p>
-                      </div>
-                    </div>
-                  </div>
+                  @endforeach
               </div>
               <button class="btn btn-primary leftLst btn-icon"><i class="fa-solid fa-arrow-left"></i></button>
               <button class="btn btn-primary rightLst btn-icon"><i class="fa-solid fa-arrow-right"></i></button>
@@ -325,34 +251,24 @@
     </div>
   </div>
 
-  <h1 class="mt-5 mb-5 text-center"><strong>Q n A</strong></h1>
 </main>
-<main class="mt-5 p-5" style="background-color:rgba(128, 128, 128, 0.3);">
+<main class="mt-5 p-5 " style="background-color:rgba(128, 128, 128, 0.3); @if($pertanyaan->isEmpty()) display:none!important @endif">
+  <h1 class="mt-5 mb-5 text-center"><strong>Q n A</strong></h1>
   <div class="container overflow-hidden pt-4" style="background-color: white; border-radius : 20px;">
-    <div>
-      <p>
-        <a style="width: 100%" class="btn btn-primary btn-round" data-toggle="collapse" href="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
-          tanya 1
-        </a>
-      </p>
-      <div class="collapse" id="collapseExample1">
-        <div class="card card-body">
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-        </div>
-      </div>
-    </div>
+    @foreach($pertanyaan as $item)
     <div>
       <p>
         <a style="width: 100%" class="btn btn-primary btn-round" data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
-          tanya 2
+          {{$item->pertanyaan}}
         </a>
       </p>
       <div class="collapse" id="collapseExample2">
         <div class="card card-body">
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+          {{$item->jawaban}}
         </div>
       </div>
     </div>
+    @endforeach
   </div>
 </main>
 @endsection
