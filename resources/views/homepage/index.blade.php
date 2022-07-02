@@ -77,7 +77,7 @@
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <a href="https://wa.me/085900221521" class="btn btn-primary">Beli</a>
+                    <a href="https://wa.me/085172436901" class="btn btn-primary">Beli</a>
                   </div>
                 </div>
               </div>
@@ -169,7 +169,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <a href="https://wa.me/085900221521" class="btn btn-primary">Beli</a>
+                <a href="https://wa.me/085172436901" class="btn btn-primary">Beli</a>
               </div>
             </div>
           </div>
