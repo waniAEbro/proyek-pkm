@@ -19,4 +19,9 @@ class HomeController extends Controller
             "pertanyaan" => Pertanyaan::get()
         ] );
     }
+
+    public function about(){
+        return view ( "homepage.about",
+        [ "title" => "About"]);
+    }
 }
