@@ -24,15 +24,20 @@ class HomeController extends Controller
         return view ( "homepage.about",
         [ "title" => "About"]);
     }
-    
-    public function detail ($id){
-        
-        $item = Kelas::find($id);
-        return view("homepage.detail", [
-            "title"=> "Detail",
-            "item" => Kelas::get($item),
-            "kelas" => Kelas::first(),
-            "platinum" => Platinum::first()
+
+    public function showKelas($id) {
+        $kelas = Kelas::find($id);
+        return view("kelas.show", [
+            "title" => $kelas->nama,
+            "kelas" => $kelas
+        ]);
+    }
+
+    public function showPlatinum($id) {
+        $platinum = Platinum::find($id);
+        return view("platinum.show", [
+            "title" => $platinum->nama,
+            "platinum" => $platinum
         ]);
     }
 }

@@ -21,7 +21,7 @@
 <style>
     .home-header {
         min-height: 0;
-        height: 400px!important;
+        height: 450px!important;
     }
     .MultiCarousel {
         float: left;
@@ -143,12 +143,12 @@
         </li>
         <li class="nav-item">
             @guest
-            <a class="nav-link btn btn-neutral btn-round" @if($title == "Login") style="display: none" @endif href="login">
+            <a class="nav-link btn btn-neutral btn-round" @if($title == "Login") style="display: none" @endif href="/login">
             Login
             </a>
             @endguest
             @auth
-            <a class="nav-link btn btn-neutral btn-round" href="logout">
+            <a class="nav-link btn btn-neutral btn-round" href="/logout">
                 Log Out
                 </a>
             @endauth
@@ -165,7 +165,7 @@
         <nav>
             <ul>
             <li>
-                <a href="https://wa.me/085172436901" target="_blank">
+                <a href="https://wa.me/625172436901" target="_blank">
                     <i class="fa-solid fa-phone"></i>
                     085172436901
                 </a>

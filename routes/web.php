@@ -27,15 +27,17 @@ Route::get("/login", [LoginController::class, "login"])->middleware("guest")->na
 
 Route::post("/login", [LoginController::class, "authenticate"]);
 
+Route::get("/about", [HomeController::class, "about"]);
+
 Route::get("/logout", [LoginController::class, "logout"])->middleware("auth");
 
-Route::get("detail/{id}", [HomeController::class ,"detail"])->middleware("auth");
+Route::get("/class/{id}", [HomeController::class, "showKelas"]);
 
-Route::get("/about", [HomeController::class, "about"])->middleware("auth");
+Route::get("/platinumm/{id}", [HomeController::class, "showPlatinum"]);
 
-Route::resource("kelas", KelasController::class)->middleware("auth");
+Route::resource("kelas", KelasController::class)->except("show")->middleware("auth");
 
-Route::resource("platinum", PlatinumController::class)->middleware("auth");
+Route::resource("platinum", PlatinumController::class)->except("show")->middleware("auth");
 
 Route::resource("pertanyaan", PertanyaanController::class)->middleware("auth");
 

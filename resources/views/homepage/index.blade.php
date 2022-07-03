@@ -55,7 +55,7 @@
         </div>
         <div class="card-footer bg-transparent pl-3 pr-3">
           <div class="d-flex justify-content-between align-items-center">
-            <a href="detail/{{$item -> id}}">more</a>
+            <a href="/class/{{$item->id}}">more</a>
 
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#kelas{{$item->id}}">
@@ -64,7 +64,7 @@
 
             <!-- Modal -->
             <div class="modal fade" id="kelas{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
+              <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel"><strong>Perhatian</strong></h5>
@@ -73,11 +73,11 @@
                     </button>
                   </div>
                   <div class="modal-body">
-                    Silakan Kirim Chat "kelas {{$item->id}}" untuk mulai memesan
+                    Silakan klik beli untuk mulai memesan produk ini
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <a href="https://wa.me/085172436901" class="btn btn-primary">Beli</a>
+                    <a href="https://api.whatsapp.com/send?phone=6285172436901&text=kelas%20{{$item->id}}" class="btn btn-primary">Beli</a>
                   </div>
                 </div>
               </div>
@@ -138,7 +138,7 @@
                     </div>
                     <div class="card-footer bg-transparent pl-3 pr-3">
                       <div class="d-flex justify-content-between align-items-center">
-                        <a href="detail/{{$item -> id}}" >more</a>
+                        <a href="/platinumm/{{$item -> id}}" >more</a>
 
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#platinum{{$item->id}}">
@@ -165,11 +165,11 @@
                 </button>
               </div>
               <div class="modal-body">
-                Silakan Kirim Chat "platinum {{$item->id}}" untuk mulai memesan
+                Silakan klik beli untuk mulai memesan produk ini
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <a href="https://wa.me/085172436901" class="btn btn-primary">Beli</a>
+                <a href="https://api.whatsapp.com/send?phone=6285172436901&text=kelas%20{{$item->id}}" class="btn btn-primary">Beli</a>
               </div>
             </div>
           </div>

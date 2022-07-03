@@ -20,9 +20,9 @@ class WhatsappController extends Controller
         if (preg_match("/menu/i", $message)) {
             Http::post("https://wa-pkm.herokuapp.com/send", [
 				"number" => $number,
-				"message" => "Berikut adalah perintah yang bisa digunakan :\n- kelas => menampilkan kelas kelas\n- platinum => menampilkan kelas platinum\n- beli => untuk membeli produk terpilih"
+				"message" => "Berikut adalah perintah yang bisa digunakan :\n- !kelas => menampilkan kelas kelas\n- !platinum => menampilkan kelas platinum"
 			]);
-        } else if (preg_match("/kelas/i", $message)) {
+        } else if (preg_match("/!kelas/i", $message)) {
 
             $pesan = [];
 
@@ -45,7 +45,7 @@ class WhatsappController extends Controller
                         ]   
                     ]
             ]);
-        } else if (preg_match("/platinum/i", $message)) {
+        } else if (preg_match("/!platinum/i", $message)) {
 
             $pesan = [];
 
