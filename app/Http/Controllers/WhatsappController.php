@@ -69,11 +69,12 @@ class WhatsappController extends Controller
                     ]
             ]);
         } else if (preg_match("/kelas/i", explode(" ", $message)[0])) {
-            $index = array_search(explode(" ", $message)[1], array_column($kelas->toArray(), "id"));
+            $id = explode(" ", $message)[1];
+            $index = array_search($id, array_column($kelas->toArray(), "id"));
             if($index) {
                 Http::post("https://wa-pkm.herokuapp.com/send", [
                     "number" => $number,
-                    "message" => "Nama Kelas : " . $kelas[$index]->nama . "\nMasa Pembelajaran : " . $kelas[$index]->masa . "\nHarga : " . $kelas[$index]->harga_baru
+                    "message" => "Nama Kelas : " . $kelas[$id]->nama . "\nMasa Pembelajaran : " . $kelas[$id]->masa . "\nHarga : " . $kelas[$id]->harga_baru
                 ]);
             } else {
                 Http::post("https://wa-pkm.herokuapp.com/send", [
@@ -82,11 +83,12 @@ class WhatsappController extends Controller
                 ]);
             }
         } else if (preg_match("/platinum/i", explode(" ", $message)[0])) {
-            $index = array_search(explode(" ", $message)[1], array_column($platinum->toArray(), "id"));
+            $id = explode(" ", $message)[1];
+            $index = array_search($id, array_column($platinum->toArray(), "id"));
             if ($index) {
                 Http::post("https://wa-pkm.herokuapp.com/send", [
                     "number" => $number,
-                    "message" => "Nama Platinum : " . $platinum[$index]->nama . "\nMasa Pembelajaran : " . $platinum[$index]->masa . "\nHarga : " . $platinum[$index]->harga_baru
+                    "message" => "Nama Platinum : " . $platinum[$id]->nama . "\nMasa Pembelajaran : " . $platinum[$id]->masa . "\nHarga : " . $platinum[$id]->harga_baru
                 ]);
             } else {
                 Http::post("https://wa-pkm.herokuapp.com/send", [
