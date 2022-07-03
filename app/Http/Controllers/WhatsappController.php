@@ -70,16 +70,31 @@ class WhatsappController extends Controller
             ]);
         } else if (preg_match("/kelas/i", explode(" ", $message)[0])) {
             $index = array_search(explode(" ", $message)[1], array_column($kelas->toArray(), "id"));
-            Http::post("https://wa-pkm.herokuapp.com/send", [
-				"number" => $number,
-				"message" => "Nama Kelas : " . $kelas[$index]->nama . "\nMasa Pembelajaran : " . $kelas[$index]->masa . "\nHarga : " . $kelas[$index]->harga_baru
-			]);
+            if($index) {
+                Http::post("https://wa-pkm.herokuapp.com/send", [
+                    "number" => $number,
+                    "message" => "Nama Kelas : " . $kelas[$index]->nama . "\nMasa Pembelajaran : " . $kelas[$index]->masa . "\nHarga : " . $kelas[$index]->harga_baru
+                ]);
+            } else {
+                Http::post("https://wa-pkm.herokuapp.com/send", [
+                    "number" => $number,
+                    "message" => "Kelas dengan ID tersebut tidak tersedia"
+                ]);
+            }
         } else if (preg_match("/platinum/i", explode(" ", $message)[0])) {
             $index = array_search(explode(" ", $message)[1], array_column($platinum->toArray(), "id"));
-            Http::post("https://wa-pkm.herokuapp.com/send", [
-				"number" => $number,
-				"message" => "Nama Platinum : " . $platinum[$index]->nama . "\nMasa Pembelajaran : " . $platinum[$index]->masa . "\nHarga : " . $platinum[$index]->harga_baru
-			]);
+            if ($index) {
+                Http::post("https://wa-pkm.herokuapp.com/send", [
+                    "number" => $number,
+                    "message" => "Nama Platinum : " . $platinum[$index]->nama . "\nMasa Pembelajaran : " . $platinum[$index]->masa . "\nHarga : " . $platinum[$index]->harga_baru
+                ]);
+            } else {
+                Http::post("https://wa-pkm.herokuapp.com/send", [
+                    "number" => $number,
+                    "message" => "Kelas Platinum dengan ID tersebut tidak tersedia"
+                ]);
+            }
+            
         }
     }
 }
