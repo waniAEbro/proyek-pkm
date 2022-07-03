@@ -19,4 +19,20 @@ class HomeController extends Controller
             "pertanyaan" => Pertanyaan::get()
         ] );
     }
+
+    public function about(){
+        return view ( "homepage.about",
+        [ "title" => "About"]);
+    }
+    
+    public function detail ($id){
+        
+        $item = Kelas::find($id);
+        return view("homepage.detail", [
+            "title"=> "Detail",
+            "item" => Kelas::get($item),
+            "kelas" => Kelas::first(),
+            "platinum" => Platinum::first()
+        ]);
+    }
 }
