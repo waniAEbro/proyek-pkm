@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string("diskon")->nullable();
             $table->string("nama");
             $table->integer("masa");
+            $table->text("slogan")->nullable();
+            $table->text("pelajar");
             $table->string("harga_lama")->nullable();
             $table->string("harga_baru");
             $table->text("deskripsi_singkat");

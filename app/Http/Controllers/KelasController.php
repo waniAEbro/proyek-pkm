@@ -51,6 +51,8 @@ class KelasController extends Controller
         Kelas::create([
             "nama" => $request->nama,
             "diskon" => $request->diskon,
+            "pelajar" => $request->pelajar,
+            "slogan" => $request->slogan,
             "harga_lama" => $request->harga_lama,
             "harga_baru" => $request->harga_baru,
             "deskripsi_singkat" => $request->deskripsi_singkat,
@@ -120,6 +122,8 @@ class KelasController extends Controller
         $kelas->update([
             "nama" => $request->nama,
             "diskon" => $request->diskon,
+            "pelajar" => $request->pelajar,
+            "slogan" => $request->slogan,
             "harga_lama" => $request->harga_lama,
             "harga_baru" => $request->harga_baru,
             "deskripsi_singkat" => $request->deskripsi_singkat,

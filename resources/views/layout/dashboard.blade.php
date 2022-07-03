@@ -96,13 +96,10 @@
         <div class="content">
             <div class="row">
             <div class="col-md-12">
-                <div class="card ">
-                <div class="card-header ">
-                    {{$title}}
-                </div>
-                <div class="card-body ">
-                    @yield("main")
-                </div>
+                <div class="card">
+                    <div class="card-body">
+                        @yield("main")
+                    </div>
                 </div>
             </div>
             </div>

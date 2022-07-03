@@ -49,6 +49,8 @@ class PlatinumController extends Controller
         Platinum::create([
             "nama" => $request->nama,
             "diskon" => $request->diskon,
+            "pelajar" => $request->pelajar,
+            "slogan" => $request->slogan,
             "harga_lama" => $request->harga_lama,
             "harga_baru" => $request->harga_baru,
             "deskripsi_singkat" => $request->deskripsi_singkat,
@@ -96,7 +98,7 @@ class PlatinumController extends Controller
     public function edit($id)
     {
         return view("platinum.edit", [
-            "platinum" => Platinum::find($id)->first(),
+            "platinum" => Platinum::find($id),
             "title" => "Platinum",
             "fasilitas" => Fasilitas::get(),
             "pembelajaran" => Pembelajaran::get()
@@ -117,6 +119,8 @@ class PlatinumController extends Controller
         Platinum::find($id)->update([
             "nama" => $request->nama,
             "diskon" => $request->diskon,
+            "pelajar" => $request->pelajar,
+            "slogan" => $request->slogan,
             "harga_lama" => $request->harga_lama,
             "harga_baru" => $request->harga_baru,
             "deskripsi_singkat" => $request->deskripsi_singkat,

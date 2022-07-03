@@ -40,6 +40,9 @@ class PembelajaranController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            "pembelajaran" => "unique:pembelajarans"
+        ]);
         Pembelajaran::create([
             "pembelajaran" => $request->pembelajaran
         ]);
@@ -68,7 +71,7 @@ class PembelajaranController extends Controller
     {
         return view("pembelajaran.edit", [
             "title" => "pembelajaran",
-            "pembelajaran" => Pembelajaran::find($id)->first()
+            "pembelajaran" => Pembelajaran::find($id)
         ]);
     }
 

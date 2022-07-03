@@ -40,6 +40,9 @@ class FasilitasController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            "fasilitas" => "unique:fasilitas"
+        ]);
         Fasilitas::create([
             "fasilitas" => $request->fasilitas
         ]);
@@ -68,7 +71,7 @@ class FasilitasController extends Controller
     {
         return view("fasilitas.edit", [
             "title" => "fasilitas",
-            "fasilitas" => Fasilitas::find($id)->first()
+            "fasilitas" => Fasilitas::find($id)
         ]);
     }
 

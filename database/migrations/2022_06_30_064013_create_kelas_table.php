@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string("diskon")->nullable();
             $table->string("nama");
+            $table->text("slogan")->nullable();
+            $table->text("pelajar");
             $table->integer("masa");
             $table->string("harga_lama")->nullable();
             $table->string("harga_baru");
