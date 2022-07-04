@@ -15,9 +15,10 @@ class EventController extends Controller
      */
     public function index()
     {
+
         return view("event.index", [
             "title" => "Event",
-            "event" => Event::paginate(10)
+            "event" => Event::get()->paginate(10)
         ]);
     }
 

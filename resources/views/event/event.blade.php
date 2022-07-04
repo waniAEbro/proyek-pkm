@@ -24,6 +24,9 @@
     <div class="mt-5 mb-5 d-flex" style="height: 325px">
         <h1 class="m-auto"><strong>Kalender Event Rumah Kompetisi</strong></h1>
     </div>
+    <form action="/even" class="form-group mb-5 mt-5">
+        <input type="text" class="form-control col" name="title" placeholder="Cari Event" aria-label="Cari Event" aria-describedby="button-addon2">
+    </form>
     <div id='calendar' style="height: 65vh"></div>
 </div>
 
