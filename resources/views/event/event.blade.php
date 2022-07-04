@@ -47,7 +47,10 @@
         navLinks: true,
         eventLimit: true,
         events: {!!$event!!},
-        eventColor : "orange"
+        eventColor : "orange",
+        eventClick: function(info) {
+            window.location.href = "/";
+        }
         });
 
         calendar.render();

@@ -60,6 +60,10 @@
         background-image: linear-gradient(to bottom, rgba(5,5,5,1), rgba(5,5,5,0));
     }
 
+    .fc-content:hover {
+        cursor: pointer;
+    }
+
     @media screen and (max-width: 1200px) {
         .hilang {
             bottom:23vh!important;

@@ -47,6 +47,7 @@ class HomeController extends Controller
         $event = Event::get();
         if (isset(request()->title)) {
             $event = Event::where("title", "like", "%".request()->title."%")->get();
+            dd($event);
         }
         return view('event.event', [
             "event" => $event->toJson(),
