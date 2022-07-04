@@ -8,6 +8,7 @@ use App\Models\Mentor;
 use App\Models\Platinum;
 use App\Models\Pertanyaan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
@@ -46,8 +47,7 @@ class HomeController extends Controller
     public function showEvent() {
         $event = Event::get();
         if (isset(request()->title)) {
-            $event = Event::where("title", "like", "%".request()->title."%")->get();
-            dd($event);
+            $event = Event::where("title", "ilike", "%".request()->title."%")->get();
         }
         return view('event.event', [
             "event" => $event->toJson(),
