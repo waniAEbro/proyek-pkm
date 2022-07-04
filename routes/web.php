@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MentorController;
@@ -46,3 +47,7 @@ Route::resource("mentor", MentorController::class)->middleware("auth");
 Route::resource("pembelajaran", PembelajaranController::class)->middleware("auth");
 
 Route::resource("fasilitas", FasilitasController::class)->middleware("auth");
+
+Route::get("/even", [HomeController::class, "showEvent"]);
+
+Route::resource("event", EventController::class);

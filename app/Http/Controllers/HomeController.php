@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Event;
 use App\Models\Kelas;
-use App\Models\Platinum;
 use App\Models\Mentor;
+use App\Models\Platinum;
 use App\Models\Pertanyaan;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
@@ -38,6 +40,13 @@ class HomeController extends Controller
         return view("platinum.show", [
             "title" => $platinum->nama,
             "platinum" => $platinum
+        ]);
+    }
+
+    public function showEvent() {
+        return view('event.event', [
+            "event" => Event::get()->toJson(),
+            "title" => "Event"
         ]);
     }
 }

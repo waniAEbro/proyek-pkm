@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Fasilitas;
+use App\Models\Event;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class FasilitasController extends Controller
+class EventController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +15,9 @@ class FasilitasController extends Controller
      */
     public function index()
     {
-        return view("fasilitas.index", [
-            "title" => "Fasilitas",
-            "fasilitas" => Fasilitas::paginate(10)
+        return view("event.index", [
+            "title" => "Event",
+            "event" => Event::paginate(10)
         ]);
     }
 
@@ -27,8 +28,8 @@ class FasilitasController extends Controller
      */
     public function create()
     {
-        return view("fasilitas.create", [
-            "title" => "Fasilitas"
+        return view("event.create", [
+            "title" => "Event"
         ]);
     }
 
@@ -40,20 +41,19 @@ class FasilitasController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            "fasilitas" => "unique:fasilitas"
-        ]);
-        Fasilitas::create([
-            "fasilitas" => $request->fasilitas
+        Event::create([
+            "title" => $request->event,
+            "start" => $request->waktu_mulai,
+            "end" => $request->waktu_selesai
         ]);
 
-        return redirect("/fasilitas");
+        return redirect("/event");
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Fasilitas  $fasilitas
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -64,14 +64,14 @@ class FasilitasController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Fasilitas  $fasilitas
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        return view("fasilitas.edit", [
-            "title" => "fasilitas",
-            "fasilitas" => Fasilitas::find($id)
+        return view("event.edit", [
+            "title" => "Event",
+            "event" => Event::find($id)
         ]);
     }
 
@@ -79,33 +79,30 @@ class FasilitasController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Fasilitas  $fasilitas
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $fasilitas = Fasilitas::find($id);
-        if($request->fasilitas != $fasilitas->fasilitas) {
-            $request->validate([
-                "fasilitas" => "unique:fasilitas"
-            ]);
-        }
-        $fasilitas->update([
-            "fasilitas" => $request->fasilitas
+        Event::find($id)->update([
+            "title" => $request->event,
+            "start" => $request->waktu_mulai,
+            "end" => $request->waktu_selesai
         ]);
 
-        return redirect("/fasilitas");
+        return redirect("/event");
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Fasilitas  $fasilitas
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        Fasilitas::destroy($id);
-        return redirect("/fasilitas");
+        Event::destroy($id);
+
+        return redirect("/event");
     }
 }

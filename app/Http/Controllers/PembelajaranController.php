@@ -84,7 +84,13 @@ class PembelajaranController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Pembelajaran::find($id)->update([
+        $pembelajaran = Pembelajaran::find($id);
+        if ($request->pembelajaran != $pembelajaran->pembelajaran) {
+            $request->validate([
+                "pembelajaran" => "unique:pembelajarans"
+            ]);
+        }
+        $pembelajaran->update([
             "pembelajaran" => $request->pembelajaran
         ]);
 

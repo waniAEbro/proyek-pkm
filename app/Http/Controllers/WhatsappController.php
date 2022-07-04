@@ -17,7 +17,7 @@ class WhatsappController extends Controller
         $number = $data["nomor"];
         $message = $data["pesan"];
 
-        if (preg_match("/menu/i", $message)) {
+        if (preg_match("/!menu/i", $message)) {
             Http::post("https://wa-pkm.herokuapp.com/send", [
 				"number" => $number,
 				"message" => "Berikut adalah perintah yang bisa digunakan :\n- !kelas => menampilkan kelas kelas\n- !platinum => menampilkan kelas platinum"
@@ -94,7 +94,6 @@ class WhatsappController extends Controller
                     "message" => "Kelas Platinum dengan ID tersebut tidak tersedia"
                 ]);
             }
-            
         }
     }
 }

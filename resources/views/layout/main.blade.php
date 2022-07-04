@@ -80,6 +80,10 @@
 
     
 </style>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/main.min.css' rel='stylesheet' />
+<link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/daygrid/main.min.css' rel='stylesheet' />
+<link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/timegrid/main.min.css' rel='stylesheet' />
+<link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/list/main.min.css' rel='stylesheet' />
 </head>
 
 <body class="index-page sidebar-collapse">
@@ -114,7 +118,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)">
+            <a class="nav-link" href="/even">
                 <p>Info Event</p>
             </a>
         </li>
@@ -122,7 +126,6 @@
             <a  class="nav-link " href="/about">
                 <p>Tentang Kami</p>
             </a>
-
         </li>
         @auth
         <li class="nav-item">
@@ -202,6 +205,11 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
 <!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
 <script src="/js/now-ui-kit.js?v=1.3.0" type="text/javascript"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/main.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/interaction/main.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/daygrid/main.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/timegrid/main.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/list/main.min.js'></script>
 <script>
 $(document).ready(function() {
     // the body of this function is in assets/js/now-ui-kit.js

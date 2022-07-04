@@ -86,6 +86,12 @@
                     <p>Pembelajaran</p>
                 </a>
             </li>
+            <li class="@if($title == "Event") active @endif">
+                <a href="/event">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <p>Event</p>
+                </a>
+            </li>
             </ul>
         </div>
         </div>
