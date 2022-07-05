@@ -9,7 +9,7 @@
         <div class="container d-flex align-items-center">
             <div class="row align-items-center">
             <div class="col" style="text-align: start!important;">
-                <h3>Temukan Seminar Lomba Dan Lain Sebagainya</h3> 
+                <h3><strong>Temukan Seminar Lomba Dan Lain Sebagainya</strong></h3> 
             </div>
                 <!--menambah tulisan-->
     

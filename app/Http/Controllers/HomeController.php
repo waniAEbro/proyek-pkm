@@ -25,7 +25,9 @@ class HomeController extends Controller
 
     public function about(){
         return view ( "homepage.about",
-        [ "title" => "About"]);
+        [ "title" => "About",
+        "pertanyaan" => Pertanyaan::get()
+    ]);
     }
 
     public function showKelas($id) {

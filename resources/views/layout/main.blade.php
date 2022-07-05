@@ -64,6 +64,15 @@
         cursor: pointer;
     }
 
+    .scroll-hilang {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .scroll-hilang::-webkit-scrollbar {
+        display:none;
+    }
+
     @media screen and (max-width: 1200px) {
         .hilang {
             bottom:23vh!important;

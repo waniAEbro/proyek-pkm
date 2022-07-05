@@ -11,7 +11,7 @@
     <div class="container d-flex align-items-center">
       <div class="row align-items-center">
         <div class="col" style="text-align: start!important;">
-          <h3>Rumah Kompetisi</h3> 
+          <h3><strong>Rumah Kompetisi</strong></h3> 
           <p>Belajar Riset dan Menulis Karya Ilmiah dengan Mudah serta Menyenangkan Membangun Ekosistem Keilmiahan dan Penelitian Untuk Mencetak Inovator Muda Indonesia</p>
         </div>
             <!--menambah tulisan-->
@@ -260,11 +260,11 @@
     @foreach($pertanyaan as $item)
     <div>
       <p>
-        <a style="width: 100%" class="btn btn-primary btn-round" data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+        <a style="width: 100%" class="btn btn-primary btn-round" data-toggle="collapse" href="#collapseExample{{$item->id}}" aria-expanded="false" aria-controls="collapseExample{{$item->id}}">
           {{$item->pertanyaan}}
         </a>
       </p>
-      <div class="collapse" id="collapseExample2">
+      <div class="collapse" id="collapseExample{{$item->id}}">
         <div class="card card-body">
           {{$item->jawaban}}
         </div>
