@@ -49,7 +49,7 @@ class PlatinumController extends Controller
     {
         $request->validate([
             "instansi" => "image|dimensions:ratio=1/1|mimes:png",
-            "background" => "image|dimenssions:ratio=16/9"
+            "background" => "image|dimensions:ratio=16/9"
         ]);
         $background = null;
         $instansi = null;
