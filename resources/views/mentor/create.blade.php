@@ -1,7 +1,7 @@
 @extends("layout.dashboard")
 
 @section("main")
-    <form action="/mentor" method="post">
+    <form action="/mentor" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="namaMentor">Nama</label>
@@ -9,9 +9,12 @@
             <small class="form-text text-muted"><span class="text-danger">*</span>wajib</small>
         </div>
         <div class="form-group">
-            <label for="gambar">Gambar</label>
-            <input type="text" class="form-control" id="gambar" name="gambar" placeholder="ex : ex : https://shopee.co.id/STIKER-BEBAS-GAMBAR-APA-AJA-i.120325226.3434298369">
+            <label for="formFile" class="form-label">Gambar <small class="form-text text-muted d-inline"><span class="text-danger">*</span>dimensi 1 x 1</small></label>
+            <input class="form-control" type="file" id="formFile" name="gambar">
             <small class="form-text text-muted"><span class="text-info">#</span>bisa kosong</small>
+            @error('gambar')
+            <div class="error text-danger">{{ $message }}</div>
+            @enderror
         </div>
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Deskripsi</label>

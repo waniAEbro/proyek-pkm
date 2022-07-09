@@ -16,7 +16,7 @@
         <tr>
             <td class="text-center">{{$item->id}}</td>
             <td class="text-center">{{$item->nama}}</td>
-            <td class="text-center">{{$item->gambar}}</td>
+            <td class="text-center"><img style="max-height: 40px" src="/storage/{{$item->gambar}}" alt=""></td>
             <td class="text-center">{{$item->deskripsi_singkat}}</td>
             <td class="d-flex justify-content-around">
                 <a rel="tooltip" href="/mentor/{{$item->id}}/edit" class="btn btn-success btn-sm btn-round btn-icon text-white">
