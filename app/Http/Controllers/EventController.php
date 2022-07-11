@@ -130,7 +130,9 @@ class EventController extends Controller
      */
     public function destroy(Event $event)
     {
-        Storage::delete($event->poster);
+        if ($event->poster) {
+            Storage::delete($event->poster);
+        }
         Event::destroy($event->id);
 
         return redirect("/event");

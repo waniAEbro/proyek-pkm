@@ -194,8 +194,12 @@ class PlatinumController extends Controller
     public function destroy($id)
     {
         $platinum = Platinum::find($id);
-        Storage::delete($platinum->background);
-        Storage::delete($platinum->instansi);
+        if ($platinum->background) {
+            Storage::delete($platinum->background);
+        }
+        if ($platinum->instansi) {
+            Storage::delete($platinum->instansi);
+        }
         $platinum->delete();
         DB::table("fasilitas_platinum")->where("platinum_id", $id)->delete();
         DB::table("pembelajaran_platinum")->where("platinum_id", $id)->delete();

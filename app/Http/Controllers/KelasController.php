@@ -115,7 +115,7 @@ class KelasController extends Controller
     public function edit($id)
     {
         return view("kelas.edit", [
-            "kelas" => Kelas::find($id)->first(),
+            "kelas" => Kelas::find($id),
             "title" => "Kelas",
             "fasilitas" => Fasilitas::get(),
             "pembelajaran" => Pembelajaran::get()
@@ -196,8 +196,12 @@ class KelasController extends Controller
     public function destroy($id)
     {
         $kelas = Kelas::find($id);
-        Storage::delete($kelas->background);
-        Storage::delete($kelas->instansi);
+        if($kelas->background) {
+            Storage::delete($kelas->background);
+        }
+        if ($kelas->instansi) {
+            Storage::delete($kelas->instansi);
+        }
         $kelas->delete();
         DB::table("fasilitas_kelas")->where("kelas_id", $kelas->id)->delete();
         DB::table("kelas_pembelajaran")->where("kelas_id", $kelas->id)->delete();

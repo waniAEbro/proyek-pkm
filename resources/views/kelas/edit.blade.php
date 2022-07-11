@@ -62,7 +62,7 @@
             @foreach($fasilitas as $item)
             <div class="form-check col-3">
                 <label class="form-check-label">
-                <input class="form-check-input text-truncate" type="checkbox" {{ ($kelas->fasilitas->contains("id", $item->id)) ? "checked" : "" }} id="{{$item->id}}" name="fasilitas[]" value="{{$item->id}}"> {{$item->fasilitas}}
+                <input class="form-check-input text-truncate" type="checkbox" id="{{$item->id}}" name="fasilitas[]" {{ ($kelas->fasilitas->contains("id", $item->id)) ? "checked" : "" }} value="{{$item->id}}"> {{$item->fasilitas}}
                 <span class="form-check-sign"></span>
                 </label>
             </div>

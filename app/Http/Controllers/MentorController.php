@@ -123,7 +123,9 @@ class MentorController extends Controller
      */
     public function destroy(Mentor $mentor)
     {
-        Storage::delete($mentor->gambar);
+        if ($mentor->gambar) {
+            Storage::delete($mentor->gambar);
+        }
         Mentor::destroy($mentor->id);
         return redirect("/mentor");
     }
