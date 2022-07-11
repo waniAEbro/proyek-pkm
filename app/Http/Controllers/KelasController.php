@@ -64,7 +64,7 @@ class KelasController extends Controller
             $instansi = $request->file("instansi")->store("kelas-instansi");
         }
 
-        $kelas = Kelas::create([
+        Kelas::create([
             "nama" => $request->nama,
             "diskon" => $request->diskon,
             "pelajar" => $request->pelajar,
@@ -76,6 +76,8 @@ class KelasController extends Controller
             "background" => $background,
             "masa" => $request->masa
         ]);
+
+        $kelas = Kelas::latest()->first()->id;
         if($request->fasilitas) {
             foreach($request->fasilitas as $item) {
                 DB::table("fasilitas_kelas")->insert([
