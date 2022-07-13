@@ -12,7 +12,7 @@
         </div>
         <div class="form-group">
             <label for="deskripsi">Deskripsi</label>
-            <input id="x" type="hidden" value="{{$event->deskripsi}}" name="deskripsi">
+            <input id="x" type="hidden" required value="{{$event->deskripsi}}" name="deskripsi">
             <trix-editor input="x"></trix-editor>
             <small class="form-text text-muted"><span class="text-danger">*</span>wajib</small>
         </div>

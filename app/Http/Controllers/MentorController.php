@@ -53,6 +53,7 @@ class MentorController extends Controller
         }
         Mentor::create([
             "nama" => $request->nama,
+            "bidang" => $request->bidang,
             "gambar" => $gambar,
             "deskripsi_singkat" => $request->deskripsi_singkat
         ]);
@@ -65,9 +66,12 @@ class MentorController extends Controller
      * @param  \App\Models\Mentor  $mentor
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Mentor $mentor)
     {
-        //
+        return view("mentor.show", [
+            "title" => "Mentor",
+            "mentor" => $mentor
+        ]);
     }
 
     /**
@@ -109,6 +113,7 @@ class MentorController extends Controller
         }
         $mentor->update([
             "nama" => $request->nama,
+            "bidang" => $request->bidang,
             "gambar" => $gambar,
             "deskripsi_singkat" => $request->deskripsi_singkat
         ]);
