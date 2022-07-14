@@ -234,7 +234,7 @@
       <div class="MultiCarousel" data-items="1,2,3,3" data-slide="1" id="MultiCarousel"  data-interval="1000">
               <div class="MultiCarousel-inner">
                   @foreach ($mentor as $item)
-                  <a href="/mentor/{{$item->id}}" class="item">
+                  <a href="/pembimbing/{{$item->id}}" class="item">
                     <div class="position-relative d-flex text-white">
                       <div class="filter filter-dark">
                         <img src="@if($item->gambar != null) /storage/{{$item->gambar}} @else https://img.freepik.com/free-photo/portrait-young-asia-lady-with-positive-expression-arms-crossed-smile-broadly-dressed-casual-clothing-looking-camera-pink-background_7861-3201.jpg?t=st=1656720589~exp=1656721189~hmac=b5a386e7f63952a0c7f3cda3f92d9903eb5f1844085dc84f772b032e3669e41d&w=1380 @endif" alt="">
